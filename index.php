@@ -6,7 +6,7 @@
 	$results = db_query("SELECT * FROM `signup`");
 
 	if($results)
-	{
+	{	
 		echo "<table border = '1'>";
 		foreach ($results as $result) 
 		{
