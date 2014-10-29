@@ -18,10 +18,11 @@ if(isset($connect) && !empty($connect) || isset($GLOBALS['db']))
 	function db_query($query)
 	{
 		$connect = $GLOBALS['db'];
-		$result = mysqli_query($connect,$query);
+		$result = mysqli_query($connect,$query) or die(mysqli_error($connect));
 
-		
-		if($num_of_rows = mysqli_num_rows($result))
+		$count = @mysqli_num_rows($result);
+		if(!$count) return;
+		if($result)
 		{
 			while($row = mysqli_fetch_assoc($result))
 			{
@@ -73,6 +74,40 @@ if(isset($connect) && !empty($connect) || isset($GLOBALS['db']))
 	}
 
 
+	function db_insert($table_name, $fields_values = array())
+	{
+			if(count($fields_values))
+			{
+				$keys = array_keys($fields_values);
+				$value = '';
+				$x = 1;
+				foreach ($fields_values as $field)
+				{
+					$comma = ",";	
+					if($x <= count($fields_values))
+					{
+						if($x > count($fields_values) - 1) $comma = "";
+
+						$value .= "'".$field."'$comma";
+
+					}
+
+					$x++;
+
+				}
+				
+				$sql = "INSERT INTO `{$table_name}`	 ( `" . implode('`,`', $keys).  "`  ) VALUES ($value)";
+
+				if(db_query($sql))
+				{
+					return true;
+				}
+
+
+			}
+			return false;
+
+	}
 
 
 }
