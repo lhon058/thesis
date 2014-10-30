@@ -11,21 +11,27 @@
 Instrument for instruction/Teaching Effectiveness</h2>
 <fieldset class="content" style="width:1000px;" ><br>
 
+<!--Padi napaluwas kona an schedule dine sa form
+..below is wat i have done..-->
+
 <tr >
   <td >
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Rating Period:&nbsp;</td>&nbsp;&nbsp;
- 
-
-        <td>
-        <input name="start" type="text" > </input>
-        </td>
-        </td>
-    
+ <?php 
+include_once("../db_connect.php");
+$results = mysqli_query($connect,"SELECT * FROM schedule");
+$row = mysqli_fetch_array($results);
+  ?>
+<td>
+<input name="start" type="text" value="<?php echo $row['start']; ?>"> </input>
+</td>
+</td>
+    <!--End-->
 &nbsp;&nbsp;<td>
   to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input name="#" type="text" ></input></td>
+  <input name="end" type="text" value="<?php echo $row['end']; ?>"></input></td>
 <br><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
