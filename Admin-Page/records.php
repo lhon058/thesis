@@ -13,12 +13,30 @@
 		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 		<html>
 			<head>	
+			<meta charset="UTF-8">
+			<link rel="stylesheet" href="style.css" type="text/css"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>
 					<?php if ($id != '') { echo "Edit Record"; } else { echo "New Record"; } ?>
 				</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 			</head>
-			<body>
+			<body class="body">
+			<header class="mainheader">
+					<img src="img/Header.jpg" alt="Welcome Admin" width="" height="">
+						<nav>
+							<ul>
+							<li class="active"><a href="index.php">Home</a></li>
+							<li><a href="">About Us</a></li>
+							<li><a href="">Logout</a></li>
+							</ul>
+						</nav>			
+			</header>
+				
+				<form action="" method="post">
+				<div class="maincontent">
+					<div class="content">
+						<div class="pagecontent">
 				<h1>
 					<?php 
 					if ($id != '') { echo "Edit Record"; } else { echo "New Record"; } 
@@ -27,26 +45,40 @@
 				<?php if ($error != '') {
 					echo "<div style='padding:4px; border:1px solid red; color:red'>" . $error
 						. "</div>";
-				} 
-				?>
-				
-				<form action="" method="post">
-				<div>
-					<?php if ($id != '') { ?>
+							} 
+						?>
+					<?php if ($id != ''){ ?>
 						<input type="hidden" name="id" value="<?php echo $id; ?>" />
-						<p>ID: <?php echo $id; ?></p>
+						<!--<p>ID: <?php /*echo*/ $id; ?></p>-->
 					<?php } ?>
 					
-					<strong>Name of Instructor</strong> <input type="text" name="instructor"
+					<strong>Name of Instructor:&nbsp;&nbsp;</strong> <input type="text" name="instructor"
 						value="<?php echo $instructor; ?>"/><br/>
-					<strong>Start:</strong> <input type="text" name="start"
+					<strong>Start:</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="start"
 						value="<?php echo $start; ?>"/>
 					<strong>End:</strong> <input type="text" name="end"
 						value="<?php echo $end; ?>"/>
 					
 					<input type="submit" name="submit" value="Submit" />
+						</div>
+					</div>
 				</div>
 				</form>
+<aside >
+	<nav>
+	<ul>
+	<li><a href="registration-request.php">Registration Request</a></li>
+	<li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
+	<li><a href="instructors-list.php">List Of Instructors</a></li>
+	<li><a href="results-list.php">List Of Results</a></li>
+	</ul>
+	</nav>
+</aside>
+<footer>
+	<img class="bgfooter" src="img/footerbg.jpg" alt="Decano Group" >			
+</footer>
 			</body>
 		</html>
 		
