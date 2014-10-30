@@ -31,7 +31,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
   <td >
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Rating Period:</td>&nbsp;&nbsp;<td><input name="#" type="text" ></input></td>
+  Rating Period:&nbsp;</td>&nbsp;&nbsp;<td><input name="#" type="text" ></input></td></tr>
  <!-- <?/*php
 include ('connect.php');
 				
@@ -54,14 +54,16 @@ include ('connect.php');
 			
 						echo "</select>";
 						echo "</tr></td>";
-						*/?>--></td>&nbsp;&nbsp;&nbsp;<td>
-  to:&nbsp;&nbsp;&nbsp;&nbsp;<input name="#" type="text" ></input></td>
-  </tr><br><br><br>
+						*/?>-->&nbsp;&nbsp;<td>
+  to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input name="#" type="text" ></input></td>
+<br><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tr>Name of Faculty:</tr>
-<tr><td><input name="#" type="text" ></input></td></tr>
+<tr><td>Name of Faculty:</td>
+<td><input name="#" type="text" ></input></td>
+</tr>
 
 <!-- <?/*php
 include ('connect.php');
