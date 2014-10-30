@@ -32,16 +32,18 @@
                                 if ($result->num_rows > 0)
                                 {
                                         // display records in a table
-                                        echo "<table >";
+                                        echo "<table class='bordered'>";
                                         
                                         // set table headers
-                                        echo "<tr>
-                                        <th>Name of Instructor</th>
-                                        <th>Start</th>
-                                        <th>End</th>
-                                        <th></th>
-                                        <th></th>
-                                        </tr>";
+                                        echo "<thead>
+                                                <tr>
+                                                <th>Name of Instructor</th>
+                                                <th>Start</th>
+                                                <th>End</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                                </tr>
+                                            <thead>";
                                         
                                         while ($row = $result->fetch_object())
                                         {
