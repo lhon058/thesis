@@ -13,7 +13,9 @@
 
 					   FOR INSTRUCTORS,ASSISTANT PROFESSOR<br>
 					   AND ASSOCIATE PROFESSORS AND FULL PROFESSORS<br>
-					   SECTORIAL EVALUATOR
+					   SECTORAL EVALUATOR: <input name="#" type="text" >
+					   <!--Padi dine sa sectoral evaluator an apat ini an 
+					   student,supervisor,peer,self-->
 </h5>
 </header><br>
 <fieldset class="content" style="width:100%;" >
