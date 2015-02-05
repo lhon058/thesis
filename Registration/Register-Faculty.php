@@ -84,6 +84,10 @@
 </tr>
 <tr>
     <td height="10">
+    <input required type="text" name="rank" id="arank" placeholder="Academic Rank"></td>
+</tr>
+<tr>
+    <td height="10">
       <select class="sel" name="type">
         <option >Select</option>
         <option value="Student">Student</option>
