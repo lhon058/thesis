@@ -41,7 +41,7 @@ if (isset($_POST['submit'])){
 			if (!$is_admin->num_rows == 1) 
 			{
 				Session::flash("message","Invalid username or password");
-				header("location:index.php?redir=admin_login&error=Invalid username or password");
+				header("location:index.php");
 			}
 			else
 			{
@@ -59,17 +59,27 @@ if (isset($_POST['submit'])){
 		{
 			$data = db_query($query);
 
-			$query_nxt = "UPDATE `faclogin` SET `status` = 1 
+			if($data)
+			{
+				$query_nxt = "UPDATE `faclogin` SET `status` = 1 
 						  WHERE `instructorID` = ".$data[0]['instructorID'];
 	
-			$is_updated = $connect->query($query_nxt);
-			
-			
-
-			$_SESSION['user_type'] = "faculty";
-			$_SESSION['user_id'] = $data[0]['instructorID'];
+				$is_updated = $connect->query($query_nxt);
 				
-			header("location:Faculty-Page/Faculty-Page.php");
+
+
+				$_SESSION['user_type'] = "faculty";
+				$_SESSION['user_id'] = $data[0]['instructorID'];
+					
+				header("location:Faculty-Page/Faculty-Page.php");
+			}
+			else
+			{
+				Session::flash("message","Invalid username or password");
+				header("location:index.php?redir=faculty_login&error=Invalid username or password");
+			}
+
+			
 			
 
 			
@@ -83,10 +93,10 @@ if (isset($_POST['submit'])){
 
 	else 
 	{
-
 		$data = db_query($sql);
 		if($data)
 		{
+			
 			$_SESSION['user_type'] = "student";
 			$_SESSION['user_id'] = $data[0]['studentID'];
 		
@@ -97,6 +107,7 @@ if (isset($_POST['submit'])){
 		}
 		else
 		{
+
 			Session::flash("message","Invalid username or password");
 			header("location:index.php?redir=student_login&error=Invalid username or password");
 		}
