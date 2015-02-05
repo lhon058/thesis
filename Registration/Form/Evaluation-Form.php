@@ -64,15 +64,12 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	
 	// get student data;
-<<<<<<< HEAD
-    	
-	$student_id =  $_SESSION['user_id'];
-=======
+
 	
 
 	if(isset($_SESSION['user_id']))
 		$student_id =  $_SESSION['user_id'];
->>>>>>> 08a3b4830cf8e8142eff359fbda4018e970cb17f
+
 
 
 

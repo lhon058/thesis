@@ -3,7 +3,7 @@
 	$username = 'root';
 	$password = '';
 	$db = 'evaluation_db';
-session_start();
+	session_start();
 
 
 	// connect to the database
@@ -16,7 +16,7 @@ session_start();
 		if(mysqli_connect_error())
 		{
 			$connect = mysqli_connect($server,"Mine","theone","evaluation_db");
-			session_start();
+			
 			if(mysqli_connect_error())
 			{
 				echo "There is an error ";
