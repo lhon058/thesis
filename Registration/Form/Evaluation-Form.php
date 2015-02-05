@@ -148,8 +148,10 @@ $query = "SELECT * FROM `evaluation_data`
 <input type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
  <input name="start" type="text" value="<?php echo $row['start']; ?>"> </input> </td>
 
-   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   &nbsp;&nbsp;TO:<input name="end" type="text" value="<?php echo $row['end']; ?>"></input> </td>
+   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;
+   <input name="end" type="text" value="<?php echo $row['end']; ?>"></input> </td>
   
   </tr>
 
@@ -488,7 +490,7 @@ Academic Rank:
 $date=date("Y-m-d");
 
 ?>
-Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input name="noe"  style=" width:18%" type="text" value="<?php  echo $student_data->FName . " ". $student_data->LName ;  ?>" ></input><br>
 </td>
 </tr>
@@ -502,7 +504,8 @@ Position of Evaluator&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <td>
 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;
 :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
