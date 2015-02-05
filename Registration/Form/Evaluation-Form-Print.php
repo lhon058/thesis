@@ -4,13 +4,145 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="form.css" type="text/css"/>
 <title>Evaluation Form</title>
+
+<script src = "../javascript/jquery-2.1.1.min.js" ></script>
+<script src = "../javascript/jquery.print.js"></script>
+
+<script>
+
+	$(document).on("click",".print_b",function(e)
+	{	
+	
+		var parent = $(".print_home");
+
+		parent.print();
+
+	});
+
+
+</script>
+
+
+<style>
+.hide_for_print
+{
+	display: none;
+}
+@media print {
+*{
+	background: transparent;
+	color: black !important;
+	text-shadow: none !important;
+	filter:none !important;
+	-ms-filter: none !important;
+}
+.hide_for_print
+{
+	display: block !important;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+
+a[href]:after {
+	content: " " !important;
+}
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
+ .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+thead {
+	display: table-header-group;
+}
+tr, img {
+	page-break-inside: avoid;
+}
+img {
+	max-width: 100% !important;
+}
+ @page 
+ {
+   margin:1cm;
+   size:8.5in 11in;
+   orphans:4; 
+   widows:2;
+
+ } 
+
+.no_print
+{
+	display: none !important;
+}
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+h2, h3 {
+	page-break-after: avoid;
+}
+table:before 
+{ 
+	/*content: url("../image_core/ssc-a.png");*/
+	position: fixed;left:100%;top:100%;opacity:0.1; 
+	margin-left:100px;
+}
+table:nth-child(odd)
+{
+	margin-top: 1%;
+	margin-bottom: 1% !important;
+}
+
+table:nth-child(even)
+{
+	margin-bottom: 1% !important;
+}
+table tr td,table th
+{
+	font-size: 10px !important;
+	white-space: none !important;
+	padding:0px !important;
+}
+fieldset
+{
+	border:none !important;
+	box-shadow:none !important;
+}
+table
+{
+	margin: 0% !important;
+	
+	border:none !important;
+}
+input[type='text']{padding:0px !important;background: transparent !important;border:none !important;}
+
+span{text-align: left !important;}
+br {display: none !important;}
+table:last-child
+{
+	margin-bottom: 0% !important;
+}
+table { page-break-inside : avoid;width:100% !important;}
+
+
+}
+
+table tr td:nth-child(2){text-align: center !important;}
+
+</style>
 </head>
 <body>
 <form method="post" action = "evaluation_process.php" >
 
 <h2 align="center">The QCE of the NBC NO.461<br>
 Instrument for instruction/Teaching Effectiveness</h2>
-<fieldset class="content" style="width:1000px;" ><br>
+<fieldset class="content print_home" style="width:80%;" ><br>
+ <a href = '#' class ='print_b no_print' style = 'float:right;' > Print </a>
 
 <!--Padi napaluwas kona an schedule dine sa form
 ..below is wat i have done..-->
@@ -402,7 +534,7 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </tr>
 
 </table><BR><BR>
-<input style="float:right" type="submit" name="submit" id="submit" value="Evaluate"></input>
+<input class = 'no_print'style="float:right" type="submit" name="submit" id="submit" value="Evaluate"></input>
 
 </form>
 
@@ -411,7 +543,7 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
 </fieldset>
 
-<fieldset class="mac" >
+<fieldset class="mac no_print" >
   <a  name="print"
    href="../Admin-Page/results-list.php?instructor=<?php echo $instructorID; ?>&evaluator_type=<?php echo $evaluator_type; ?>&submit_ins=OK" style="cursor:pointer;"><img style="margin-left:600px;margin-top:5px" src="images/back.png" title="Back" width="70px"></img></a>
 
