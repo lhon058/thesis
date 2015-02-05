@@ -53,7 +53,6 @@ else
 
 
      <div class="registration"></div>
-    <div class="announcement_header"><img src="images/ssc.jpg" width="732" height="572" /></div>
       <div class="menu">
 	
 			<ul id="MenuBar2" class="MenuBarVertical">
@@ -79,8 +78,8 @@ else
   <form id="form1" name="form1" method="post" action="login.php">
 <div class="login">
   <p>
-<label> Username: </label>  <input class="text" type="text" name="username" id="username" placeholder="Username"/>
- <label> Password:</label>  <input class="text" type="password" name="password" id="Password" />
+  <input class="text" type="text" name="username" id="username" placeholder="Username"/>
+   <input class="text" type="password" name="password" id="Password" placeholder="Password" />
     </p>
   <p>
     <input  type="submit" name="submit" id="submit" value="Log In" />
