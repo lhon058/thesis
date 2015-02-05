@@ -7,6 +7,7 @@
 </head>
 <body>
 <form method="post" action = "evaluation_process.php" >
+
 <h2 align="center">The QCE of the NBC NO.461<br>
 Instrument for instruction/Teaching Effectiveness</h2>
 <fieldset class="content" style="width:1000px;" ><br>
@@ -64,7 +65,9 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	// get student data;
 	
-	$student_id =  $_SESSION['user_id'];
+
+	if(isset($_SESSION['user_id']))
+		$student_id =  $_SESSION['user_id'];
 
 
 
@@ -93,6 +96,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 ?>
 <tr >
   <td >
+  <a href = '../logout.php?user_type=student' style = 'color:red;text-decoration:none; '> Logout </a>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Rating Period:&nbsp;</td>&nbsp;&nbsp;

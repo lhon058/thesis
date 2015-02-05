@@ -16,7 +16,7 @@
 		<img src="img/Header.jpg" alt="Welcome Admin" width="" height="">
 			<nav>
 				<ul>
-				<?php include_once("../db_connect.php"); 
+					<?php include_once("../db_connect.php"); 
 
 	if(!isset($_SESSION['faculty_id']) && empty($_SESSION['faculty_id']))
 	{
