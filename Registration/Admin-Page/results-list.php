@@ -74,7 +74,8 @@
 							<select name = 'evaluator_type'>
 
 								<option value = 'student'> Student </option>
-								<option value = 'faculty'> Faculty </option>
+								<option value = 'peer'> Peer </option>
+								<option value = 'self'> Self </option>
 								<option value = 'supervisor'> Supervisor </option>
 							
 							</select>
@@ -93,10 +94,10 @@
 									{
 
 										$instructorID = trim($_GET['instructor']);
-										$eval_type    = trim($_GET['evaluator_type']);
+										$eval_type    = strtolower(trim($_GET['evaluator_type']));
 
 										echo "<table border = 1> 
-										      <thead> <th>Student Name </th> <th>Date Evaluated </th> <th>Action</th></thead>";
+										      <thead> <th> Name </th> <th>Date Evaluated </th> <th>Action</th></thead>";
 
 										switch ($eval_type) 
 										{
@@ -120,7 +121,9 @@
 														$row = (object)$row;
 														echo "<tr><td> $row->FName $row->LName</td>
 																  <td>$row->date</td>
-																  <td><a href ='?student_id=$row->user_id&action_type=view'> View Evaluation </a></td>
+																  <td><a href ='../form/Evaluation-Form-Print.php?user_id=$row->user_id&action_type=view
+																				&instructor=$instructorID&evaluator_type=Student
+																  '> View Evaluation </a></td>
 															</tr>";
 													}
 													
@@ -131,14 +134,92 @@
 
 												break;
 											}
-											case 'faculty':
+											case 'peer':
 											{
 
+												$query = "SELECT * FROM `evaluation_data` as ed
+														  JOIN `instructor` as i
+														  ON `ed`.`user_id` = `i`.`instructorID` 
+														  WHERE `ed`.`instructorID` = $instructorID
+														  AND `ed`.`evaluators_type` = 'Peer' 
+														  AND `ed`.`scheduleID` = 1";
+
+												$result = $connect->query($query) or die(mysqli_error($connect));
+			
+												if($result)
+												{
+												
+													while($row = $result->fetch_assoc())
+													{
+														$row = (object)$row;
+														echo "<tr><td> $row->FName $row->LName</td>
+																  <td>$row->date</td>
+																  <td><a href ='../form/Evaluation-Form-Print.php?user_id=$row->user_id&action_type=view
+																				&instructor=$instructorID&evaluator_type=Peer
+																  '> View Evaluation </a></td>
+															</tr>";
+													}
+													
+													
+												}
+												break;
+											}
+											case 'self':
+											{
+												$query = "SELECT * FROM `evaluation_data` as ed
+														  JOIN `instructor` as i
+														  ON `ed`.`user_id` = `i`.`instructorID` 
+														  WHERE `ed`.`instructorID` = $instructorID
+														  AND `ed`.`evaluators_type` = 'Self' 
+														  AND `ed`.`scheduleID` = 1";
+
+												$result = $connect->query($query) or die(mysqli_error($connect));
+			
+												if($result)
+												{
+												
+													while($row = $result->fetch_assoc())
+													{
+														$row = (object)$row;
+														echo "<tr><td> $row->FName $row->LName</td>
+																  <td>$row->date</td>
+																  <td><a href ='../form/Evaluation-Form-Print.php?user_id=$row->user_id&action_type=view
+																				&instructor=$instructorID&evaluator_type=Self
+																  '> View Evaluation </a></td>
+															</tr>";
+													}
+													
+													
+												}
 												break;
 											}
 											case 'supervisor':
 											{
+												$query = "SELECT * FROM `evaluation_data` as ed
+														  JOIN `instructor` as i
+														  ON `ed`.`user_id` = `i`.`instructorID` 
+														  WHERE `ed`.`instructorID` = $instructorID
+														  AND `ed`.`evaluators_type` = 'Supervisor' 
+														  AND `ed`.`scheduleID` = 1";
 
+												$result = $connect->query($query) or die(mysqli_error($connect));
+			
+												if($result)
+												{
+												
+													while($row = $result->fetch_assoc())
+													{
+														$row = (object)$row;
+														echo "<tr><td> $row->FName $row->LName</td>
+																  <td>$row->date</td>
+																  <td><a href ='../form/Evaluation-Form-Print.php?user_id=$row->user_id&action_type=view
+																				&instructor=$instructorID&evaluator_type=Supervisor
+																  '> View Evaluation </a></td>
+															</tr>";
+													}
+													
+													
+												}
 												break;
 											}
 												
