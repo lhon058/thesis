@@ -56,7 +56,7 @@ else
       <div class="menu">
 	
 			<ul id="MenuBar2" class="MenuBarVertical">
-			<li><a href="/thesis/registration">Home</a></li>
+			<li><a href="index.php">Home</a></li>
 			<li><a href="?redir=student_login">Student</a></li>
 			<li><a href="?redir=faculty_login">Faculty</a></li>
 			<li><a href="?redir=admin_login">Admin</a></li>

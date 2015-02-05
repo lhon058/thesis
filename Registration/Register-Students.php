@@ -42,7 +42,7 @@
       <div class="menu">
 	
 			<ul id="MenuBar2" class="MenuBarVertical">
-			<li><a href="#">Home</a></li>
+			<li><a href="index.php">Home</a></li>
       <li><a href="Login-Students.php">Student</a></li>
       <li><a href="Login-Faculty.php">Faculty</a></li>
       <li><a href="Login-Admin.php">Admin</a></li>
