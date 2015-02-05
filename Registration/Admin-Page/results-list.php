@@ -11,33 +11,43 @@
 		<img src="img/Header.jpg" alt="Welcome Admin" width="" height="">
 			<nav>
 				<ul>
-				<li class="active"><a href="index.php">Home</a></li>
-				<li><a href="">About Us</a></li>
-				<li><a href="">Logout</a></li>
+					<li class="active"><a href="index.php">Home</a></li>
+					<li><a href="">About Us</a></li>
+					<li><a href="">Logout</a></li>
 				</ul>
 			</nav>			
 		</header>
-<div class="maincontent">
-	<div class="content">
-		<div class="pagecontent">
-			
-		</div>
-	</div>
+		<div class="maincontent">
+			<div class="content">
+				<div class="pagecontent">
 
-</div>
-<aside >
-<nav>
-<ul>
-<li><a href="registration-request.php">Registration Request</a></li>
-<li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
-<li><a href="instructors-list.php">List Of Instructors</a></li>
-<li><a href="results-list.php">List Of Results</a></li>
-</ul>
-</nav>
-</aside>
-<footer>
-	<img class="bgfooter" src="img/footerbg.jpg" alt="Decano Group" >
-				
-</footer>
+					<a href = "student-result.php"> Students </a>
+					<a href = "faculty-result.php"> Faculty </a>
+					<a href = "supervisor-result.php"> Supervisor </a>
+					
+
+				</div>
+			</div>
+
+		</div>
+
+		<aside >
+			<nav>
+				<ul>
+					<li><a href="registration-request.php">Registration Request</a></li>
+					<li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
+					<li><a href="instructors-list.php">List Of Instructors</a></li>
+					<li><a href="results-list.php">List Of Results</a></li>
+				</ul>
+			</nav>
+		</aside>
+
+
+
+
+		<footer>
+			<img class="bgfooter" src="img/footerbg.jpg" alt="Decano Group" >
+						
+		</footer>
 	</body>
 </html>

@@ -4,6 +4,132 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="secoral.css" type="text/css"/>
 <title>Sectorial Form</title>
+
+
+<script src = "../javascript/jquery-2.1.1.min.js" ></script>
+<script src = "../javascript/jquery.print.js"></script>
+
+<script>
+
+	$(document).on("click",".print_b",function(e)
+	{	
+	
+		var parent = $(".print_home");
+
+		parent.print();
+
+	});
+
+
+</script>
+
+
+<style>
+.hide_for_print
+{
+	display: none;
+}
+@media print {
+*{
+	background: transparent;
+	color: black !important;
+	text-shadow: none !important;
+	filter:none !important;
+	-ms-filter: none !important;
+}
+.hide_for_print
+{
+	display: block !important;
+}
+a, a:visited {
+	text-decoration: underline;
+}
+
+a[href]:after {
+	content: " " !important;
+}
+abbr[title]:after {
+	content: " (" attr(title) ")";
+}
+ .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+	border: 1px solid #999;
+	page-break-inside: avoid;
+}
+thead {
+	display: table-header-group;
+}
+tr, img {
+	page-break-inside: avoid;
+}
+img {
+	max-width: 100% !important;
+}
+ @page 
+ {
+   margin:1.5cm;
+   size:8.5in 11in;
+   orphans:4; 
+   widows:2;
+
+ } 
+
+.no_print
+{
+	display: none !important;
+}
+p, h2, h3 {
+	orphans: 3;
+	widows: 3;
+}
+h2, h3 {
+	page-break-after: avoid;
+}
+table:before 
+{ 
+	/*content: url("../image_core/ssc-a.png");*/
+	position: fixed;left:100%;top:100%;opacity:0.1; 
+	margin-left:100px;
+}
+table:nth-child(odd)
+{
+	margin-top: 3%;
+	margin-bottom: 5% !important;
+}
+
+table:nth-child(even)
+{
+	margin-bottom: 3% !important;
+}
+table tr td,table th
+{
+	font-size: 14px !important;
+	white-space: pre;
+	padding:0px !important;
+}
+fieldset
+{
+	border:none !important;
+
+}
+table
+{
+	margin: 0% !important;
+	
+	border:none !important;
+}
+table:last-child
+{
+	margin-bottom: 0% !important;
+}
+table { page-break-inside : avoid }
+
+}
+
+</style>
+
 </head>
 <body>
 <form>
@@ -18,16 +144,32 @@
 	{
 
 
+
 		include_once("../db_connect.php");
 		$instructor_id = $_GET['instructor'];
+
+		$query = "SELECT * FROM `instructor` WHERE `instructorID` = $instructor_id";
+
+		$instructor_data = (object) db_query($query)[0];
 		
 		$loop = 1;
+		$done = false;
+		$average = "";
+		$update = "";
+		$text = "";
+		$fields = array();
+
 
 		if($_GET['evaluator_type'] == 'All')
 		{
 
 			$loop = 4;
 		}
+
+
+		 $schedule = "SELECT * FROM `schedule` ORDER BY `scheduleID` DESC LIMIT 1 ";
+
+		 $schedule = (object) db_query($schedule)[0];
 
 		for($dcount=0; $dcount < $loop; $dcount++) 
 		{ 
@@ -46,7 +188,8 @@
 			$query = "SELECT * FROM `evaluation_data` 
 			          WHERE `instructorID` = '$instructor_id'
 					  AND `evaluators_type` = '$evaluator_type'
-					  AND `scheduleID` = 1";
+					  AND `scheduleID` = $schedule->scheduleID";
+
 
 			
 					  
@@ -63,6 +206,7 @@
 				}
 			}
 			
+
 
 			$no_of_eval = count($data);	
 
@@ -171,11 +315,125 @@
 					 $total_varD = $total_varD * 0.25;
 
 					 $total_all = $total_varA + $total_varB + $total_varC + $total_varD;
-					 echo $total_all . "<br>";
+
+			 		$final_query = "";
+			 	
+			 		if(empty($total_all)) $total_all = 0;
+			 		
+
+			 	
+			 		$average[] = $total_all;
+			 		$text .= "`averageRating".$evaluator_type."`=".$total_all.",";
+			 		$fields[] = $evaluator_type;
+
+			 		
+			 		$update= $text;
+
+					 		
+			 		 $query = "SELECT * FROM `total_rating` WHERE `scheduleID` = $schedule->scheduleID 
+					 		   AND `instructorID` = $instructor_id";
+
+
+					 if($result = mysqli_query($connect,$query) or die(mysqli_error()))
+					 {	
+
+					 		if($result->num_rows  == 0 && $dcount == $loop-1)
+					 		{
+
+					 			$average = implode(",", $average);
+					 			
+					 			
+					 			
+					 			$final_query = "INSERT INTO `total_rating` 
+					 					  (`scheduleID`,`instructorID`,`averageRatingStudent`,`averageRatingSelf`,
+					 					  	`averageRatingPeer`,`averageRatingSupervisor`)
+										   VALUES ($schedule->scheduleID,$instructor_id,$average)";
+								//echo $final_query;
+								if($result = mysqli_query($connect,$final_query) or die(mysqli_error($connect)))
+						 		{
+						 			
+						 		}
+					 			//echo $query;
+					 		}
+					 		else if($result->num_rows > 0 && $dcount == $loop-1)
+					 		{
+					 			
+					 			$pos = strripos($update,",");
+					 			$update = substr($update,0, $pos);
+					 		
+					 			
+
+					 			$final_query = "UPDATE `total_rating` SET  
+					 					  $update WHERE `scheduleID` = $schedule->scheduleID 
+					 					  AND `instructorID` = $instructor_id";
+
+					 			if($result = mysqli_query($connect,$final_query))
+						 		{
+						 			
+						 		}
+					 		}
+
+					 	
+					 		
+
+					 }
+					 
 
 		}
 		else
-			continue;
+		{
+
+			 $query = "SELECT * FROM `total_rating` WHERE `scheduleID` = $schedule->scheduleID 
+					 		   AND `instructorID` = $instructor_id";
+
+
+			 if($result = mysqli_query($connect,$query) or die(mysqli_error()))
+			 {	
+
+			 		if($result->num_rows  == 0 && is_array($average))
+			 		{
+
+			 			$average = implode(",", $average);
+			 			$fields = "`averageRating".implode("`,`averageRating",$fields)."`";
+
+			 			
+			 			$final_query = "INSERT INTO `total_rating` 
+			 					  (`scheduleID`,`instructorID`,$fields)
+								   VALUES ($schedule->scheduleID,$instructor_id,$average)";
+
+						//echo $final_query;
+			 			if($result = mysqli_query($connect,$final_query) or die(mysql_error()))
+				 		{
+
+
+				 			//continue;
+				 		}
+				 		
+			 		}
+			 		else if($result->num_rows > 0 && is_array($average))
+			 		{
+			 			$pos = strripos($update,",");
+			 			$update = substr($update,0, $pos);
+
+
+			 			
+			 			
+
+			 			$final_query = "UPDATE `total_rating` SET  
+			 					  $update WHERE `scheduleID` = $schedule->scheduleID 
+			 					  AND `instructorID` = $instructor_id";
+			 			
+				 		if($result = mysqli_query($connect,$final_query) or die(mysql_error()))
+				 		{
+				 			//continue;
+				 		}
+			 		}
+			 	
+			 		
+
+			 }
+			
+		}
 			
 		
 			
@@ -303,12 +561,17 @@ function analyze_result($result = array())
 					   student,supervisor,peer,self-->
 </h5>
 </header><br>
-<fieldset class="content" style="width:100%;" >
+<fieldset class="content print_home" style="width:100%;" >
+<div class = 'hide_for_print'>
+	
+	<span> Evaluator Type  : <?php echo $_GET['evaluator_type']; ?></span><br>
+	<span> Instructor Name  : <?php echo $instructor_data->FullName; ?></span>
 
+</div>
 
-<table class="bordered">
+<table class="bordered ">
 		<thead> 
-				<h5 >I. COMMITMENT</h5>
+				<h5 >I. COMMITMENT <a href = '#' class ='print_b no_print' style = 'float:right;' > Print </a></h5>
 		</thead>
 		<tr>
 			
@@ -628,9 +891,9 @@ function analyze_result($result = array())
 
 ?>
 
-<footer>
+<footer class = "no_print">
 	<tr>
-	<td>Rater:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="Rater" type="text" ></input></td><br>
+	<td>Rater:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class = "no_print" name="Rater" type="text" ></input></td><br>
 	<td>Position:&nbsp;&nbsp;&nbsp;<input name="position" type="text" ></input></td><br>
 	</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -642,7 +905,7 @@ function analyze_result($result = array())
 
 
 </fieldset>
-<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+<FORM><INPUT class = "no_print" Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
 </form>		
 </body>
 </html>

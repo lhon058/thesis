@@ -123,7 +123,14 @@ $query = "SELECT * FROM `evaluation_data`
  */
 
 
- $f_query = "SELECT * FROM `instructor` ";
+
+ $f_query = "SELECT DISTINCT `i`.`instructorID`,`i`.* FROM `instructor` as i
+             JOIN `evaluation_data` as ed
+             ON `i`.`instructorID` = `ed`.`instructorID`
+             WHERE `ed`.`user_id` != $student_data->studentID
+ 		    ";
+
+
 
  $instructor = (object) db_query($f_query);
 
