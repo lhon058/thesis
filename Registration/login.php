@@ -84,16 +84,9 @@ if (isset($_POST['submit'])){
 		{
 			$_SESSION['user_type'] = "student";
 			$_SESSION['user_id'] = $data[0]['studentID'];
-
-<<<<<<< HEAD
-	
-		$_SESSION['user_type'] = "student";
-		$_SESSION['user_id'] = $data[0]['studentID'];
-
 		
 
-		header("location:Form/Evaluation-Form.php");
-=======
+	
 		
 			header("location:Form/Evaluation-Form.php");
 		}
@@ -104,8 +97,7 @@ if (isset($_POST['submit'])){
 		}
 		
 
-		
->>>>>>> 08a3b4830cf8e8142eff359fbda4018e970cb17f
+
 	} 
 }
 ?>

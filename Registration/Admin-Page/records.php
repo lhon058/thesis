@@ -149,7 +149,7 @@
 				$id = $_GET['id'];
 				
 				// get the recod from the database
-				if($stmt = $connect->prepare("SELECT * FROM schedule WHERE id=?"))
+				if($stmt = $connect->prepare("SELECT * FROM schedule WHERE scheduleID=?"))
 				{
 					$stmt->bind_param("i", $id);
 					$stmt->execute();
