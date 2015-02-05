@@ -145,7 +145,7 @@ $query = "SELECT * FROM `evaluation_data`
 </td>
     <!--End-->
 &nbsp;&nbsp;<td>
-  to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <span style = "font-weight:bold;"> <?php echo $row['end']; ?></span></td>
 <br><br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -167,20 +167,18 @@ $query = "SELECT * FROM `evaluation_data`
 	   </td>
         </td>
   
-&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <tr>Academic Rank:</tr>
 <tr><td><input name="#" type="text" ></input></td></tr>
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-
+&nbsp;&nbsp;&nbsp;
 
 <span> Evaluator: <b> <?php echo $_GET['evaluator_type'];$evaluator_type = trim($_GET['evaluator_type']); ?>
-</div>
-<center>
+</div> 
+<center><br><br>
 <b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
 
 <table border="1" class="" width="100%">
@@ -379,7 +377,7 @@ $query = "SELECT * FROM `evaluation_data`
 $date=date("Y-m-d");
 
 ?>
-Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input name="noe"  style=" width:18%" type="text" value="<?php  echo $eval_data->FName . " ". $eval_data->LName ;  ?>" ></input><br>
 </td>
 </tr>
@@ -393,7 +391,8 @@ Position of Evaluator&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <td>
 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
 :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
