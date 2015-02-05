@@ -1,7 +1,7 @@
 <?php 
 $server = 'localhost';
-$username = 'root';
-$password = '';
+$username = 'Mine';
+$password = 'theone';
 $db = 'evaluation_db';
 
 $connect = new mysqli($server,$username,$password,$db);
