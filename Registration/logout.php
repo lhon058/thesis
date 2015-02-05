@@ -18,7 +18,12 @@
 					header("location:index.php?redir=student_login");
 					break;
 				}	
-				
+				case 'admin':
+				{
+					session_destroy();
+					header("location:index.php?redir=admin_login");
+					break;
+				}
 				default:
 					# code...
 					break;

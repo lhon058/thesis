@@ -8,28 +8,6 @@
 </head>
 
 
-<?php
-
-			include_once("../db_connect.php");
-			$query = "SELECT * FROM `instructor`";
-			
-			$result = $connect->query($query);
-			
-			if($result)
-			{
-			
-				while($row = $result->fetch_assoc())
-				{
-					$instructors[] = $row;
-				}
-				
-				
-			}
-
-
-
-
-?>
 	<body class="body">
 		<header class="mainheader">
 		<img src="img/Header.jpg" alt="Welcome Admin" width="" height="">
@@ -37,7 +15,7 @@
 				<ul>
 					<li class="active"><a href="index.php">Home</a></li>
 					<li><a href="">About Us</a></li>
-					<li><a href="">Logout</a></li>
+					<li><a href="../logout.php?user_type=admin">Logout</a></li>
 				</ul>
 			</nav>			
 		</header>
@@ -51,114 +29,6 @@
 
 
 					<div>
-
-						<form action = '' name = 'select_instructor'>
-
-							<label for = "evaluator_type" >Evalution for </label>
-							<select name = "instructor">
-					
-					
-								<?php
-
-
-
-
-									if(isset($instructors) && !empty($instructors))
-									{					
-										foreach($instructors as $i)
-										{
-											$i = (object)$i;
-											echo "<option value = '$i->instructorID'> $i->FName $i->LName </option>";
-										}
-									}
-									
-									
-								?>
-							</select>
-							
-							<label for = "evaluator_type" >by</label>
-							<select name = 'evaluator_type'>
-
-								<option value = 'student'> Student </option>
-								<option value = 'faculty'> Faculty </option>
-								<option value = 'supervisor'> Supervisor </option>
-							
-							</select>
-							<input type = 'submit' name = 'submit_ins' value = 'OK'>
-
-						</form>
-
-
-						<br><br><br>
-
-						<div >
-							<?php
-								if(isset($_GET) && !empty($_GET))
-								{
-									if(isset($_GET['instructor']) && !empty($_GET['instructor']))
-									{
-
-										$instructorID = trim($_GET['instructor']);
-										$eval_type    = trim($_GET['evaluator_type']);
-
-										echo "<table border = 1> 
-										      <thead> <th>Student Name </th> <th>Date Evaluated </th> <th>Action</th></thead>";
-
-										switch ($eval_type) 
-										{
-											case 'student':
-											{
-												
-												$query = "SELECT * FROM `evaluation_data` as ed
-														  JOIN `student` as st 
-														  ON `ed`.`user_id` = `st`.`studentID` 
-														  WHERE `ed`.`instructorID` = $instructorID
-														  AND `ed`.`evaluators_type` = 'Student' 
-														  AND `ed`.`scheduleID` = 1";
-
-												$result = $connect->query($query) or die(mysqli_error($connect));
-			
-												if($result)
-												{
-												
-													while($row = $result->fetch_assoc())
-													{
-														$row = (object)$row;
-														echo "<tr><td> $row->FName $row->LName</td>
-																  <td>$row->date</td>
-																  <td><a href ='?student_id=$row->user_id&action_type=view'> View Evaluation </a></td>
-															</tr>";
-													}
-													
-													
-												}
-
-
-
-												break;
-											}
-											case 'faculty':
-											{
-
-												break;
-											}
-											case 'supervisor':
-											{
-
-												break;
-											}
-												
-											
-											default:
-												# code...
-												break;
-										}
-
-										echo "</table>";
-									}
-								}
-
-							?>
 
 						</div>
 						

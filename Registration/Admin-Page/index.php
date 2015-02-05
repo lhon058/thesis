@@ -13,7 +13,7 @@
 				<ul>
 				<li class="active"><a href="index.php">Home</a></li>
 				<li><a href="">About Us</a></li>
-				<li><a href="">Logout</a></li>
+				<li><a href="../logout.php?user_type=admin">Logout</a></li>
 				</ul>
 			</nav>			
 		</header>
