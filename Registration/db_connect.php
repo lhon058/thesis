@@ -4,6 +4,7 @@
 	$password = '';
 	$db = 'evaluation_db';
 	session_start();
+	include_once("Session.php");
 
 
 	// connect to the database

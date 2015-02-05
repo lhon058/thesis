@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+<?php include_once("Session.php"); ?>
 
 <html lang ="en">
 <head>
@@ -65,6 +65,8 @@
   </p>
    <p>&nbsp;</p>
 </div>
+<br>
+<span style ='color:white;'> <?php echo Session::flash("message");?></span>
 </form></div>
 </div>
 </body>
