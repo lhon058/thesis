@@ -87,6 +87,7 @@ else
   </p>
    <p>&nbsp;</p>
 </div>
+<span style ='color:white;'> <?php echo Session::flash("message");?></span>
 </form></div>
 </div>
 </html>
