@@ -61,7 +61,8 @@
     </p>
   <p>
     <input  type="submit" name="submit" id="submit" value="Log In" />
-    <input  type="button" onclick="redirect('Register-Students.php')" name="register" id="submit" value="Register" />
+      <input  type="button" onclick="redirect('Register-Students.php')" name="register" id="submit" value="Register" />
+
   </p>
    <p>&nbsp;</p>
 </div>
