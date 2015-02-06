@@ -35,9 +35,30 @@ font-size: 15px;
 color: #555;
 
 }
-.icon{
-	
-	max-width:15%;
+.badge {
+background-color: #468847;
+padding-right: 9px;
+padding-left: 9px;
+-webkit-border-radius: 9px;
+-moz-border-radius: 9px;
+border-radius: 9px;
+}
+.badgered {
+	background-color: #b94a48;
+
+padding-right: 9px;
+padding-left: 9px;
+-webkit-border-radius: 9px;
+-moz-border-radius: 9px;
+border-radius: 9px;
+}
+.badgeyell {
+	background-color: #f89406;
+padding-right: 9px;
+padding-left: 9px;
+-webkit-border-radius: 9px;
+-moz-border-radius: 9px;
+border-radius: 9px;
 }
 .selectopt {
 width: 200px;
@@ -48,7 +69,14 @@ font-size: 15px;
 color: #555;
 
 }
-
+.badgeblue {
+	background-color: #3a87ad;
+padding-right: 9px;
+padding-left: 9px;
+-webkit-border-radius: 9px;
+-moz-border-radius: 9px;
+border-radius: 9px;
+}
 fieldset{
 border-radius:10px;
 

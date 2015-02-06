@@ -269,7 +269,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 </tr>
 <tr>
 
-<td class="left">1. Demonstrates sensitivity to students ability to attend and absorb content information.</td>
+<td class="left"><span class="badge">1.</span> Demonstrates sensitivity to students ability to attend and absorb content information.</td>
 <td class="tdsize">
 <input name="a" type="radio" value="5"  required>5&nbsp;</input>
 <input name="a" type="radio" value="4"  required>4&nbsp;</input>
@@ -279,7 +279,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 </td>
 
 </tr><tr>
-<td class="left">2. Integrates sensitivity his/her learning objectives with those of the students in a collaborative process.</td>
+<td class="left"><span class="badge">2.</span> Integrates sensitivity his/her learning objectives with those of the students in a collaborative process.</td>
 <td class="tdsize" > 
 <input name="b" type="radio" value="5"  required>5&nbsp;</input>
 <input name="b" type="radio" value="4"  required>4&nbsp;</input>
@@ -289,7 +289,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 
 </tr>
 <tr>
-<td class="left">3. Makes self available beyond official time.</td>
+<td class="left"><span class="badge">3.</span> Makes self available beyond official time.</td>
 <td class="tdsize">
 <input name="c" type="radio" value="5"  required>5&nbsp;</input>
 <input name="c" type="radio" value="4"  required>4&nbsp;</input>
@@ -299,7 +299,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 
 </tr>
 <tr>
-<td class="left">4. Regularly comes to class on time, well-groomed and well-prepared to complete assigned responsibilities.</td>
+<td class="left"><span class="badge">4.</span> Regularly comes to class on time, well-groomed and well-prepared to complete assigned responsibilities.</td>
 <td class="tdsize">
 <input name="d" type="radio" value="5"  required>5&nbsp;</input>
 <input name="d" type="radio" value="4"  required>4&nbsp;</input>
@@ -309,7 +309,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 
 </tr><tr>
 
-<td class="left">5. Keeps accurate records of students performance and prompt submission of the same.</td>
+<td class="left"><span class="badge">5.</span> Keeps accurate records of students performance and prompt submission of the same.</td>
 <td class="tdsize" >
 <input name="e" type="radio" value="5"  required>5&nbsp;</input>
 <input name="e" type="radio" value="4"  required>4&nbsp;</input>
@@ -329,7 +329,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <td colspan="5" align="center"> Scale </td>
 </tr>
 <tr>
-<td class="left">1. Demonstrates mastery of the subject matter (explain the subject matter without relying solely on the prescribed textbook).</td>
+<td class="left"><span class="badgered">1.</span> Demonstrates mastery of the subject matter (explain the subject matter without relying solely on the prescribed textbook).</td>
 <td class="tdsize">
 <input name="a2" type="radio"  value="5" required>5&nbsp;</input>
 <input name="a2" type="radio"  value="4" required>4&nbsp;</input>
@@ -337,7 +337,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="a2" type="radio"  value="2" required>2&nbsp;</input>
 <input name="a2" type="radio"  value="1" required>1</input> </td>
 </tr><tr>
-<td class="left">2. Draws and share information on the state of the art of theory and practice in his/her discipline.</td>
+<td class="left"><span class="badgered">2.</span> Draws and share information on the state of the art of theory and practice in his/her discipline.</td>
 <td class="tdsize"
 ><input name="b2" type="radio"   value="5" required>5&nbsp;</input>
 <input  name="b2" type="radio"   value="4" required>4&nbsp;</input>
@@ -345,7 +345,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input  name="b2" type="radio"   value="2" required>2&nbsp;</input>
 <input  name="b2" type="radio"   value="1" required>1</input> </td>
 </tr><tr>
-<td class="left">3. Integrates subject to practical circumstances and learning intents/purposes of students.</td>
+<td class="left"><span class="badgered">3.</span> Integrates subject to practical circumstances and learning intents/purposes of students.</td>
 <td class="tdsize">
 <input  name="c2" type="radio"    value="5"  required>5&nbsp;</input>
 <input name="c2"  type="radio"    value="4"  required>4&nbsp;</input>
@@ -354,7 +354,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="c2"  type="radio"    value="1"  required>1</input> </td>
 </tr>
 <tr>
-<td class="left">4. Explains the relevance of present topics to the previous lessons and relates the subject matter to relevant current issues and/or daily life activities.</td>
+<td class="left"><span class="badgered">4.</span> Explains the relevance of present topics to the previous lessons and relates the subject matter to relevant current issues and/or daily life activities.</td>
 <td class="tdsize">
 <input name="d2"  type="radio"   value="5" required>5&nbsp;</input>
 <input name="d2"  type="radio"   value="4" required>4&nbsp;</input>
@@ -363,7 +363,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="d2"  type="radio"   value="1" required>1</input> </td>
 </tr>
 <tr>
-<td class="left">5. Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject.</td>
+<td class="left"><span class="badgered">5.</span> Demonstrates up-to-date knowledge and/or awareness on current trends and issues of the subject.</td>
 <td class="tdsize">
 <input name="e2"  type="radio"  value="5" required>5&nbsp;</input>
 <input name="e2"  type="radio"  value="4" required>4&nbsp;</input>
@@ -382,7 +382,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <td colspan="5" align="center"> Scale </td>
 </tr>
 <tr>
-<td class="left">1. Creates teaching strategies that allow students to practice using concepts they need to understand (interactive discussion).</td>
+<td class="left"><span class="badgeyell">1.</span> Creates teaching strategies that allow students to practice using concepts they need to understand (interactive discussion).</td>
 <td class="tdsize">
 <input name="a3" type="radio"   value="5"  required>5&nbsp;</input>
 <input name="a3" type="radio"   value="4" required>4&nbsp;</input>
@@ -391,7 +391,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="a3" type="radio"   value="1" required>1</input>
  </td>
 </tr><tr>
-<td class="left">2. Enhances student self-esteem and/or gives due recognition to students performance/potentials.</td>
+<td class="left"><span class="badgeyell">2.</span> Enhances student self-esteem and/or gives due recognition to students performance/potentials.</td>
 <td class="tdsize">
 <input name="b3"  type="radio"   value="5" required>5&nbsp;</input>
 <input name="b3"  type="radio"   value="4" required>4&nbsp;</input>
@@ -399,7 +399,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="b3"  type="radio"   value="2" required>2&nbsp;</input>
 <input name="b3"  type="radio"   value="1" required>1</input> </td>
 </tr><tr>
-<td class="left">3. Allows students to create their own course with objectives and realistically defined student-professor rules and make them accountable for their performance.</td>
+<td class="left"><span class="badgeyell">3.</span> Allows students to create their own course with objectives and realistically defined student-professor rules and make them accountable for their performance.</td>
 <td class="tdsize">
 <input name="c3" type="radio"   value="5" required >5&nbsp;</input>
 <input name="c3" type="radio"   value="4" required>4&nbsp;</input>
@@ -410,7 +410,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
  </td>
 </tr>
 <tr>
-<td class="left">4. Allows students to think independently and make their own decisions and holding them accountable for their perfomance based largely on thier success in executing decisions.</td>
+<td class="left"><span class="badgeyell">4.</span> Allows students to think independently and make their own decisions and holding them accountable for their perfomance based largely on thier success in executing decisions.</td>
 <td class="tdsize">
 <input name="d3" type="radio"   value="5"  required>5&nbsp;</input>
 <input name="d3" type="radio"   value="4" required>4&nbsp;</input>
@@ -420,7 +420,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 </td>
 </tr>
 <tr>
-<td class="left">5. Encourages students to learn beyond what is required and help/guide the students how to apply the concepts learned.</td>
+<td class="left"><span class="badgeyell">5.</span> Encourages students to learn beyond what is required and help/guide the students how to apply the concepts learned.</td>
 <td class="tdsize">
 <input name="e3" type="radio"   value="5" required >5&nbsp;</input>
 <input name="e3" type="radio"   value="4" required>4&nbsp;</input>
@@ -439,7 +439,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <td colspan="5" align="center"> Scale </td>
 </tr>
 <tr>
-<td class="left">1. Creates opportunities for intensive and/or extensive contribution of students in the class activities(e.g. breaks class into dyads ,triads , or buzz/task groups).</td>
+<td class="left"><span class="badgeblue">1.</span> Creates opportunities for intensive and/or extensive contribution of students in the class activities(e.g. breaks class into dyads ,triads , or buzz/task groups).</td>
 <td class="tdsize">
 <input name="a4"  type="radio"   value="5"  required>5&nbsp;</input>
 <input name="a4"  type="radio"   value="4"  required>4&nbsp;</input>
@@ -448,7 +448,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="a4"  type="radio"   value="1"  required>1</input>
 </td>
 </tr><tr>
-<td class="left">2. Assumes roles as facilitator , resource  person , coach , inquisitor , integrator , referee in drawing students to contribute to knowledge and understanding of the concepts at hands.</td>
+<td class="left"><span class="badgeblue">2.</span> Assumes roles as facilitator , resource  person , coach , inquisitor , integrator , referee in drawing students to contribute to knowledge and understanding of the concepts at hands.</td>
 <td class="tdsize">
 <input name="b4" type="radio"   value="5"  required>5&nbsp;</input>
 <input name="b4" type="radio"   value="4"  required>4&nbsp;</input>
@@ -457,7 +457,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 <input name="b4" type="radio"   value="1"  required>1</input>
  </td>
 </tr><tr>
-<td class="left">3. Designs and implements learning conditions and experience that promotes healthy exchange and/or confrontations.</td>
+<td class="left"><span class="badgeblue">3.</span> Designs and implements learning conditions and experience that promotes healthy exchange and/or confrontations.</td>
 <td>
 <input name="c4" type="radio"   value="5"  required>5&nbsp;</input>
 <input name="c4" type="radio"   value="4"  required>4&nbsp;</input>
@@ -467,7 +467,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
  </td>
 </tr>
 <tr>
-<td class="left">4. Stuctures / re-structures learning and teaching-learning context to enhance attainment of collective learning objectives.</td>
+<td class="left"><span class="badgeblue">4.</span> Stuctures / re-structures learning and teaching-learning context to enhance attainment of collective learning objectives.</td>
 <td  class="tdsize">
 <input name="d4" type="radio"   value="5" required>5&nbsp;</input>
 <input name="d4" type="radio"   value="4" required>4&nbsp;</input>
@@ -477,7 +477,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
  </td>
 </tr>
 <tr>
-<td class="left">5. Use of Instructional Materials (audio/video materials , fieldtrips , film showing, computer aided instruction and etc.) to reinforces learning processes.</td>
+<td class="left"><span class="badgeblue">5.</span> Use of Instructional Materials (audio/video materials , fieldtrips , film showing, computer aided instruction and etc.) to reinforces learning processes.</td>
 <td class="tdsize">
 <input name="e4" type="radio"    value="5"  required>5&nbsp;</input>
 <input name="e4"  type="radio"   value="4"  required>4&nbsp;</input>
@@ -488,7 +488,7 @@ Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; 
 </tr>
 
 </table><BR><BR>
-<table border="none" class="tablesize">
+<table style="border:none;" class="tablesize">
 <tr>
 <td>
 <?php
