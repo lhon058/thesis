@@ -7,8 +7,8 @@
 </head>
 <body>
 <form method="post" action = "evaluation_process.php" >
-
-<h2 align="center">The QCE of the NBC NO.461<br>
+<img class="logo"  src="../images/logo.png"></img>
+<h2 class="brand">The QCE of the NBC NO.461<br>
 Instrument for instruction/Teaching Effectiveness</h2>
 <fieldset class="content" style="width:1000px;" ><br>
 
@@ -64,15 +64,11 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	
 	// get student data;
-<<<<<<< HEAD
-    	
-	$student_id =  $_SESSION['user_id'];
-=======
-	
+
 
 	if(isset($_SESSION['user_id']))
 		$student_id =  $_SESSION['user_id'];
->>>>>>> 08a3b4830cf8e8142eff359fbda4018e970cb17f
+
 
 
 
@@ -99,12 +95,11 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	
 ?>
-<tr >
-  <td >
   <a href = '../logout.php?user_type=student' style = 'color:red;text-decoration:none; '> Logout </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Rating Period:&nbsp;</td>&nbsp;&nbsp;
+  <table style="border:none;"> 
+  <tr>
+<td>
+  Rating Period:
  <?php 
 
 $results = mysqli_query($connect,"SELECT * FROM schedule LIMIT 1");
@@ -149,28 +144,21 @@ $query = "SELECT * FROM `evaluation_data`
   ?>
   
   
-  
-  
-<td>
+
 <input type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
-<input name="start" type="text" value="<?php echo $row['start']; ?>"> </input>
-</td>
-</td>
-    <!--End-->
-&nbsp;&nbsp;<td>
-  to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input name="end" type="text" value="<?php echo $row['end']; ?>"></input></td>
-<br><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<tr><td>Name of Faculty:</td>
+ <input name="start" type="text" value="<?php echo $row['start']; ?>"> </input> </td>
+
+   <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;TO:<input name="end" type="text" value="<?php echo $row['end']; ?>"></input> </td>
+  
+  </tr>
+
+<tr><td>Name of Faculty:
 
 
-        <td>
       	
 		<?php
-			echo "<select name = 'instructorID' required>
+			echo "<select class='selectopt' name = 'instructorID' required>
 				  <option value = ''> Select Instructor </option>";
 
 			foreach ($instructor as $ins) 
@@ -187,22 +175,18 @@ $query = "SELECT * FROM `evaluation_data`
 
 		<!--<input type = "hidden" name = "instructorID" value = "<?php echo $faculty_data->instructorID;?>">;-->
 	   </td>
-        </td>
-  
-&nbsp;&nbsp;
-<tr>Academic Rank:</tr>
-<tr><td><input name="#" type="text" ></input></td></tr>
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
+
+<td>
+Academic Rank:
+<input name="#" type="text" ></input>
 
 
-<span> Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; ?></i>
+</td></tr>   
+</table> 
+<br>
+<center> Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; ?></i>
 <input type = "hidden" name = "studentID" value =  "<?php echo $student_data->studentID;?>" >
-</b> </span><br>
+</b> </center><br>
 
 <div class="cs">
 <input  class="checkbox" type="radio" name="evaluators" value="Self" disabled >Self&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -225,7 +209,7 @@ $query = "SELECT * FROM `evaluation_data`
 
 <input  class="checkbox" name="evaluators" type="radio" name="evaluators"  disabled value="Supervisor" >Supervisor</input><br><br>
 </div>
-<center>
+<center style = 'color:#b07219;text-decoration:none; '>
 <b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
 
 <table border="1" class="" width="100%">
@@ -527,7 +511,7 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </tr>
 
 </table><BR><BR>
-<input style="float:right" type="submit" name="submit" id="submit" value="Evaluate"></input>
+<input class="link"  style="float:right" type="submit" name="submit" id="submit" value="Evaluate"></input>
 
 </form>
 
@@ -536,11 +520,6 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
 </fieldset>
 
-<fieldset class="mac" >
-  <a  name="print" href="home.php" style="cursor:pointer;"><img style="margin-left:600px;margin-top:5px" src="images/back.png" title="Back" width="70px"></img></a>
-
-
-</fieldset>
 </body>
 </html>
 		
