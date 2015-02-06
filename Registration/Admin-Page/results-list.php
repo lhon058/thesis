@@ -45,7 +45,7 @@
 			<div class="content">
 				<div class="pagecontent">
 
-					
+						<h3> Result List </h3>
 						<form action = '' name = 'select_instructor'>
 
 							<label for = "evaluator_type" >Evalution for </label>

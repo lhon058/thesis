@@ -301,7 +301,7 @@ $query = "SELECT * FROM `evaluation_data`
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <tr>Academic Rank:</tr>
-<tr><td><input name="#" type="text" ></input></td></tr>
+<tr><td><span> <?php echo $instructor->academic_rank ;?></span></td></tr>
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
