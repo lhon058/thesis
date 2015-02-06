@@ -84,7 +84,7 @@ else
   <form id="form1" name="form1" method="post" action="login.php">
 <div class="login">
   <p>
-<label> ID Number: </label>  <input class="text" type="text" name="username" id="username" placeholder="Username"/>
+<label> Username: </label>  <input class="text" type="text" name="username" id="username" placeholder="Username"/>
  <label> Password:</label>  <input class="text" type="password" name="password" id="password" placeholder="Password" />
     </p>
   <p>
