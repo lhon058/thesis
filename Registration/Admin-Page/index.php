@@ -28,7 +28,6 @@
 <aside >
 <nav>
 <ul>
-<li><a href="registration-request.php">Registration Request</a></li>
 <li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
 <li><a href="instructors-list.php">List Of Instructors</a></li>
 <li><a href="results-list.php">List Of Results</a></li>

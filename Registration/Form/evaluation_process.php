@@ -3,7 +3,6 @@
 if(isset($_POST))
 {
 	include_once("../db_connect.php");
-	echo "<pre>".print_r($_POST,true) . "</pre>";
 	
 	$_POST = (object)$_POST;
 	$date = date("Y-m-d h:i:sa");

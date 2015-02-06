@@ -28,6 +28,14 @@
 {
 	display: none;
 }
+.print_b
+{
+	color:red;
+	text-decoration: none;
+	border:1px solid black;
+	padding:5px;
+	background: rgba(21,42,13,0.6);
+}
 @media print {
 *{
 	background: transparent;
