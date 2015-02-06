@@ -83,7 +83,6 @@ else
     </p>
   <p>
     <input  type="submit" name="submit" id="submit" value="Log In" />
-    <input  type="reset" name="button2" id="button2" value="Clear Entries" />
   </p>
    <p>&nbsp;</p>
 </div>

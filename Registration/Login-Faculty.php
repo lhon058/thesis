@@ -90,7 +90,6 @@ else
   <p>
     <input  type="submit" name="submit" id="submit" value="Log In" />
     <input  type="button" onclick="redirect('Register-Faculty.php')" name="register" id="submit" value="Register" />
-    <input  type="reset" name="button2" id="button2" value="Clear Entries" />
   </p>
    <p>&nbsp;</p>
 </div>

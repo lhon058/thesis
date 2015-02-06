@@ -138,27 +138,7 @@ else
 -->
 
 </body>
-<<<<<<< HEAD
-<div class="student_login">
-<div class="login_content">
-  <form id="form1" name="form1" method="post" action="login.php">
-<div class="login">
-  <p>
-  <input class="text" type="text" name="username" id="username" placeholder="ID Number: 00-0000"/>
-   <input class="text" type="password" name="password" id="Password" placeholder="Password" />
-    </p>
-  <p>
-    <input  type="submit" name="submit" id="submit" value="Log In" />
-    <input  type="reset" name="button2" id="button2" value="Clear Entries" />
-  </p>
-   <p>&nbsp;</p>
-</div>
-<span style ='color:white;'> <?php echo Session::flash("message");?></span>
-</form></div>
-</div>
-=======
 
 
->>>>>>> 1d6c3a16aee364659860bf69b88e8294d2f6115f
 </html>
 		

@@ -213,8 +213,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 <tr >
   <td >
  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   Rating Period:&nbsp;</td>&nbsp;&nbsp;
  <?php 
 
@@ -285,12 +284,12 @@ $query = "SELECT * FROM `evaluation_data`
 </td>
     <!--End-->
 &nbsp;&nbsp;<td>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to:&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
  <span style = "font-weight:bold;"> <?php echo $row['end']; ?></span></td>
-<br><br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <tr><td>Name of Faculty:</td>
 
 
@@ -310,18 +309,15 @@ $query = "SELECT * FROM `evaluation_data`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <tr>Academic Rank:</tr>
 <tr><td><span> <?php echo $instructor->academic_rank ;?></span></td></tr>
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <span> Evaluator: <b> <?php echo $_GET['evaluator_type'];$evaluator_type = trim($_GET['evaluator_type']); ?>
 </div> 
 <center><br><br>
 <b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
 
-<table border="1" class="" width="100%">
+<table border="1" class="" width="60%">
 <tr>
   <td>Scale</td>
   <td>Descriptive Rating</td>
@@ -517,7 +513,7 @@ $query = "SELECT * FROM `evaluation_data`
 $date=date("Y-m-d");
 
 ?>
-Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input name="noe"  style=" width:18%" type="text" value="<?php  echo $eval_data->FName . " ". $eval_data->LName ;  ?>" ></input><br>
 </td>
 </tr>
@@ -532,7 +528,7 @@ Position of Evaluator&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;
+&nbsp;
 :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
@@ -540,9 +536,7 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </td>
 </tr>
 
-</table><BR><BR>
-<input class = 'no_print'style="float:right" type="submit" name="submit" id="submit" value="Evaluate"></input>
-
+</table>
 </form>
 
 

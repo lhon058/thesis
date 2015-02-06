@@ -96,7 +96,7 @@
 										$instructorID = trim($_GET['instructor']);
 										$eval_type    = strtolower(trim($_GET['evaluator_type']));
 
-										echo "<table border = 1> 
+										echo "<table class='bordered' border = 1> 
 										      <thead> <th> Name </th> <th>Date Evaluated </th> <th>Action</th></thead>";
 
 										switch ($eval_type) 
