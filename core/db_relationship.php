@@ -22,7 +22,16 @@
 				'LName'		  	   => 'LName',
 				
 		),
-		
+		'instructor_table'	=>	array(
+				'ssc_table_name'   => 'instructor',		// refer as the table name
+				'myssc_table_name' => 'instructor',
+				'InstructorID'	   => 'instructorID',
+				'FName' 	   	   => 'FName',
+				'LName'		  	   => 'LName',
+				'MName'		  	   => 'MName',
+				'FullName'		   => 'FullName',
+
+			),
 
 	
 	);
