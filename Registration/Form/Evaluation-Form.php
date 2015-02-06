@@ -73,7 +73,9 @@ Instrument for instruction/Teaching Effectiveness</h2>
 
 
 	$query = "SELECT * FROM `signup` as si
-	          JOIN `student` as stud ON `si`.`username` = `stud`.`studentNo`
+	          JOIN `student` as stud 
+	          ON `si`.`studentRefID` = `stud`.`studentID` 
+
 			   WHERE `si`.`studentID` = $student_id";
 	
 	
@@ -81,8 +83,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	$result = db_query($query);
 
 
-
-
+	
 	
 	if($result)
 	{

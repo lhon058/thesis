@@ -2,8 +2,8 @@
 require_once("db_connect.php");
 
 if (isset($_POST['submit'])){
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = trim($_POST['username']);
+	$password = trim($_POST['password']);
  
  		// edit ko lang query mo
 	// dri dapat padi nagagamit sin like kapag malogin or macheck sin sensitive na data
@@ -12,11 +12,16 @@ if (isset($_POST['submit'])){
 	//$sql = "SELECT * from signup WHERE username LIKE '{$username}' AND password LIKE '{$password}' LIMIT 1";
 	
 	// - edited   
-	$sql = "SELECT * FROM `signup` WHERE `username` = '$username' AND `password` = $password OR `password` = '$password' ";
+	$sql = "SELECT * FROM `signup` WHERE `username` = '$username' AND `password` = '$password'  ";
 	
 
 
-	$result = $connect->query($sql) ;
+	$result = $connect->query($sql) or die(mysqli_error($connect));
+	
+
+
+
+	
 	
 
 	
@@ -94,12 +99,14 @@ if (isset($_POST['submit'])){
 	else 
 	{
 		$data = db_query($sql);
+
 		if($data)
 		{
 			
 			$_SESSION['user_type'] = "student";
 			$_SESSION['user_id'] = $data[0]['studentID'];
 		
+
 
 	
 		
