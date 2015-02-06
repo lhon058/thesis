@@ -59,7 +59,6 @@ else
 
 
      <div class="registration"></div>
-    <div class="announcement_header"><img src="images/ssc.jpg" width="732" height="572" /></div>
       <div class="menu">
 	
 			<ul id="MenuBar2" class="MenuBarVertical">

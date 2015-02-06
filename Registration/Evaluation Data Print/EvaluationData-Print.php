@@ -130,7 +130,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 <tr>
 
 <td class="left">A.Commitment</td>
-<td colspan="5" align="center"> Scale </td>
+<td class="thead" colspan="5" align="center"> Scale </td>
 
 </tr>
 <tr>
