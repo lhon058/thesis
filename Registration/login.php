@@ -40,7 +40,7 @@ if (isset($_POST['submit'])){
 			
 			if (!$is_admin->num_rows == 1) 
 			{
-				echo "<p>Invalid username/password combination </p>";
+				header("location:index.php?redir=admin_login&error=Invalid username or password");
 			}
 			else
 			{
@@ -80,7 +80,12 @@ if (isset($_POST['submit'])){
 	{
 
 		$data = db_query($sql);
+		if($data)
+		{
+			$_SESSION['user_type'] = "student";
+			$_SESSION['user_id'] = $data[0]['studentID'];
 
+<<<<<<< HEAD
 	
 		$_SESSION['user_type'] = "student";
 		$_SESSION['user_id'] = $data[0]['studentID'];
@@ -88,6 +93,19 @@ if (isset($_POST['submit'])){
 		
 
 		header("location:Form/Evaluation-Form.php");
+=======
+		
+			header("location:Form/Evaluation-Form.php");
+		}
+		else
+		{
+
+			header("location:index.php?redir=student_login&error=Invalid username or password");
+		}
+		
+
+		
+>>>>>>> 08a3b4830cf8e8142eff359fbda4018e970cb17f
 	} 
 }
 ?>

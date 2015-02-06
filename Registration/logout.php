@@ -12,7 +12,12 @@
 					header("location:index.php?redir=faculty_login");
 					break;
 				}
-					
+				case 'student':
+				{
+					session_destroy();
+					header("location:index.php?redir=student_login");
+					break;
+				}	
 				
 				default:
 					# code...

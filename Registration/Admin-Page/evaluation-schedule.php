@@ -26,7 +26,7 @@
 								// connect to the database
                         include('connect.php');
 
-  							   if ($result = $connect->query("SELECT * FROM schedule ORDER BY id"))
+  							   if ($result = $connect->query("SELECT * FROM schedule ORDER BY scheduleID"))
                         {
                                 // display records if there are records to display
                                 if ($result->num_rows > 0)
@@ -52,8 +52,8 @@
                                                 echo "<td>" . $row->instructor . "</td>";
                                                 echo "<td>" . $row->start . "</td>";
                                                 echo "<td>" . $row->end . "</td>";
-                                                echo "<td><a href='records.php?id=" . $row->id . "'>Edit</a></td>";
-                                                echo "<td><a href='delete.php?id=" . $row->id . "'>Delete</a></td>";
+                                                echo "<td><a href='records.php?id=" . $row->scheduleID . "'>Edit</a></td>";
+                                                echo "<td><a href='delete.php?id=" . $row->scheduleID . "'>Delete</a></td>";
                                                 echo "</tr>";
                                         }
                                         
