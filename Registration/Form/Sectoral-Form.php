@@ -601,7 +601,7 @@ function analyze_result($result = array())
 			
 			
 			<!-- Average Rating -->
-			<td><?php echo $varA = compute_result($final_resultA[0],$no_of_eval); ?></td>
+			<td><?php echo round($varA = compute_result($final_resultA[0],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -612,7 +612,7 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultA[1]->count2;?></td>
 			<td><?php echo $final_resultA[1]->count1;?></td>
 			
-			<td><?php echo $varA1 = compute_result($final_resultA[1],$no_of_eval); ?></td>
+			<td><?php echo round($varA1 = compute_result($final_resultA[1],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -622,7 +622,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultA[2]->count3;?></td>
 			<td><?php echo $final_resultA[2]->count2;?></td>
 			<td><?php echo $final_resultA[2]->count1;?></td>
-			<td><?php echo $varA2 = compute_result($final_resultA[2],$no_of_eval); ?></td>
+
+			<td><?php echo round($varA2 = compute_result($final_resultA[2],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -632,7 +633,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultA[3]->count3;?></td>
 			<td><?php echo $final_resultA[3]->count2;?></td>
 			<td><?php echo $final_resultA[3]->count1;?></td>
-			<td><?php echo $varA3 = compute_result($final_resultA[3],$no_of_eval); ?></td>
+
+			<td><?php echo round($varA3 = compute_result($final_resultA[3],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -642,12 +644,13 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultA[4]->count3;?></td>
 			<td><?php echo $final_resultA[4]->count2;?></td>
 			<td><?php echo $final_resultA[4]->count1;?></td>
-			<td><?php echo $varA4 = compute_result($final_resultA[4],$no_of_eval); ?></td>
+
+			<td><?php echo round($varA4 = compute_result($final_resultA[4],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
 			<td colspan="6">TOTAL AREA RATING</td>
-			<td><?php echo  ($varA+$varA1+$varA2+$varA3+$varA4)/5; ?></td>
+			<td><?php echo  round(($varA+$varA1+$varA2+$varA3+$varA4)/5,1); ?></td>
 			
 		</tr>
 
@@ -679,7 +682,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultB[0]->count3;?></td>
 			<td><?php echo $final_resultB[0]->count2;?></td>
 			<td><?php echo $final_resultB[0]->count1;?></td>
-			<td><?php echo $varB = compute_result($final_resultB[0],$no_of_eval); ?></td>
+
+			<td><?php echo round($varB = compute_result($final_resultB[0],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -689,7 +693,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultB[1]->count3;?></td>
 			<td><?php echo $final_resultB[1]->count2;?></td>
 			<td><?php echo $final_resultB[1]->count1;?></td>
-			<td><?php echo $varB1 = compute_result($final_resultB[1],$no_of_eval); ?></td>
+
+			<td><?php echo round($varB1 = compute_result($final_resultB[1],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -699,7 +704,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultB[2]->count3;?></td>
 			<td><?php echo $final_resultB[2]->count2;?></td>
 			<td><?php echo $final_resultB[2]->count1;?></td>
-			<td><?php echo $varB2 = compute_result($final_resultB[2],$no_of_eval); ?></td>
+
+			<td><?php echo round($varB2 = compute_result($final_resultB[2],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -709,7 +715,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultB[3]->count3;?></td>
 			<td><?php echo $final_resultB[3]->count2;?></td>
 			<td><?php echo $final_resultB[3]->count1;?></td>
-			<td><?php echo $varB3 = compute_result($final_resultB[3],$no_of_eval); ?></td>
+
+			<td><?php echo round($varB3 = compute_result($final_resultB[3],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -719,12 +726,13 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultB[4]->count3;?></td>
 			<td><?php echo $final_resultB[4]->count2;?></td>
 			<td><?php echo $final_resultB[4]->count1;?></td>
-			<td><?php echo $varB4 = compute_result($final_resultB[4],$no_of_eval); ?></td>
+
+			<td><?php echo round($varB4 = compute_result($final_resultB[4],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
 			<td colspan="6">TOTAL AREA RATING</td>
-			<td><?php  echo 	 ($varB+$varB1+$varB2+$varB3+$varB4)/5 ?></td>
+			<td><?php  echo 	 round(($varB+$varB1+$varB2+$varB3+$varB4)/5,1);?></td>
 			
 		</tr>
 
@@ -756,7 +764,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultC[0]->count3;?></td>
 			<td><?php echo $final_resultC[0]->count2;?></td>
 			<td><?php echo $final_resultC[0]->count1;?></td>
-			<td><?php echo $varC = compute_result($final_resultC[0],$no_of_eval); ?></td>
+
+			<td><?php echo round($varC = compute_result($final_resultC[0],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -766,7 +775,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultC[1]->count3;?></td>
 			<td><?php echo $final_resultC[1]->count2;?></td>
 			<td><?php echo $final_resultC[1]->count1;?></td>
-			<td><?php echo $varC1 = compute_result($final_resultC[1],$no_of_eval); ?></td>
+
+			<td><?php echo round($varC1 = compute_result($final_resultC[1],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -776,7 +786,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultC[2]->count3;?></td>
 			<td><?php echo $final_resultC[2]->count2;?></td>
 			<td><?php echo $final_resultC[2]->count1;?></td>
-			<td><?php echo $varC2 = compute_result($final_resultC[2],$no_of_eval); ?></td>
+
+			<td><?php echo round($varC2 = compute_result($final_resultC[2],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -786,7 +797,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultC[3]->count3;?></td>
 			<td><?php echo $final_resultC[3]->count2;?></td>
 			<td><?php echo $final_resultC[3]->count1;?></td>
-			<td><?php echo $varC3 = compute_result($final_resultC[3],$no_of_eval); ?></td>
+
+			<td><?php echo round($varC3 = compute_result($final_resultC[3],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -796,12 +808,13 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultC[4]->count3;?></td>
 			<td><?php echo $final_resultC[4]->count2;?></td>
 			<td><?php echo $final_resultC[4]->count1;?></td>
-			<td><?php echo $varC4 = compute_result($final_resultC[4],$no_of_eval); ?></td>
+
+			<td><?php echo round($varC4 = compute_result($final_resultC[4],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
 			<td colspan="6">TOTAL AREA RATING</td>
-			<td><?php  echo 	  ($varC+$varC1+$varC2+$varC3+$varC4)/5 ?></td>
+			<td><?php  echo 	  round(($varC+$varC1+$varC2+$varC3+$varC4)/5,1); ?></td>
 			
 		</tr>
 
@@ -833,7 +846,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultD[0]->count3;?></td>
 			<td><?php echo $final_resultD[0]->count2;?></td>
 			<td><?php echo $final_resultD[0]->count1;?></td>
-			<td><?php echo $varD = compute_result($final_resultD[0],$no_of_eval); ?></td>
+
+			<td><?php echo round($varD = compute_result($final_resultD[0],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -843,7 +857,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultD[1]->count3;?></td>
 			<td><?php echo $final_resultD[1]->count2;?></td>
 			<td><?php echo $final_resultD[1]->count1;?></td>
-			<td><?php echo $varD1 = compute_result($final_resultD[1],$no_of_eval); ?></td>
+
+			<td><?php echo round($varD1 = compute_result($final_resultD[1],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -853,7 +868,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultD[2]->count3;?></td>
 			<td><?php echo $final_resultD[2]->count2;?></td>
 			<td><?php echo $final_resultD[2]->count1;?></td>
-			<td><?php echo $varD2 = compute_result($final_resultD[2],$no_of_eval); ?></td>
+
+			<td><?php echo round($varD2 = compute_result($final_resultD[2],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -863,7 +879,8 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultD[3]->count3;?></td>
 			<td><?php echo $final_resultD[3]->count2;?></td>
 			<td><?php echo $final_resultD[3]->count1;?></td>
-			<td><?php echo $varD3 = compute_result($final_resultD[3],$no_of_eval); ?></td>
+
+			<td><?php echo round($varD3 = compute_result($final_resultD[3],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
@@ -873,12 +890,13 @@ function analyze_result($result = array())
 			<td><?php echo $final_resultD[4]->count3;?></td>
 			<td><?php echo $final_resultD[4]->count2;?></td>
 			<td><?php echo $final_resultD[4]->count1;?></td>
-			<td><?php echo $varD4 = compute_result($final_resultD[4],$no_of_eval); ?></td>
+
+			<td><?php echo round($varD4 = compute_result($final_resultD[4],$no_of_eval),1); ?></td>
 			
 		</tr>
 		<tr>
 			<td colspan="6">TOTAL AREA RATING</td>
-			<td><?php  echo 	  ($varD+$varD1+$varD2+$varD3+$varD4)/5 ?></td>
+			<td><?php  echo 	  round(($varD+$varD1+$varD2+$varD3+$varD4)/5,1); ?></td>
 			
 		</tr>
 
@@ -891,7 +909,7 @@ function analyze_result($result = array())
 
 ?>
 
-<footer class = "no_print">
+<!--<footer class = "no_print">
 	<tr>
 	<td>Rater:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class = "no_print" name="Rater" type="text" ></input></td><br>
 	<td>Position:&nbsp;&nbsp;&nbsp;<input name="position" type="text" ></input></td><br>
@@ -901,7 +919,7 @@ function analyze_result($result = array())
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<td>
 	Dean/Director:<input name="sem" type="text" ></input></td>
 	</tr>
-</footer>
+</footer>-->
 
 
 </fieldset>
