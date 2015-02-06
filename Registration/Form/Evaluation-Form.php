@@ -63,7 +63,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	
 	// get student data;
-	
+    	
 	$student_id =  $_SESSION['user_id'];
 
 

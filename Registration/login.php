@@ -1,5 +1,6 @@
 <?php
 require_once("db_connect.php");
+
 if (isset($_POST['submit'])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -80,12 +81,12 @@ if (isset($_POST['submit'])){
 
 		$data = db_query($sql);
 
-		
-
+	
 		$_SESSION['user_type'] = "student";
 		$_SESSION['user_id'] = $data[0]['studentID'];
 
-	
+		
+
 		header("location:Form/Evaluation-Form.php");
 	} 
 }

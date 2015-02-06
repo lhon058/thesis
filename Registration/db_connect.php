@@ -3,6 +3,7 @@
 	$username = 'root';
 	$password = '';
 	$db = 'evaluation_db';
+session_start();
 
 
 	// connect to the database
