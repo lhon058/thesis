@@ -25,6 +25,8 @@ if (isset($_POST['submit'])){
 			$in_table = false;
 			
 			$result = $connect->query($query);
+			$data = (object) $result->fetch_assoc();
+
 			if($result)
 			{
 				if($result->num_rows > 0 )
@@ -33,8 +35,12 @@ if (isset($_POST['submit'])){
 				
 			if($in_table)
 			{
-				$insert = "INSERT INTO signup (username,password,type,confirmation)
-				VALUES ('$_POST[stud_id]',' $_POST[password]',' $_POST[type]','0')";
+				$stud_id = trim($_POST['stud_id']);
+				$password = trim($_POST['password']);
+
+
+				$insert = "INSERT INTO signup (studentRefID,username,password,type,confirmation)
+				VALUES ($data->studentID,'$stud_id','$password',' $_POST[type]','0')";
 
 				$addmember = mysqli_query($connect,$insert) or die(mysqli_error($connect));
 				

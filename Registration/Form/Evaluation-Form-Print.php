@@ -37,6 +37,13 @@
 	background: rgba(21,42,13,0.6);
 }
 @media print {
+.rating_period
+{
+	margin-left: -27px !important;
+	margin-right: 22px !important;
+	margin-bottom: 2px;
+}
+
 *{
 	background: transparent;
 	color: black !important;
@@ -214,7 +221,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
   <td >
  
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Rating Period:&nbsp;</td>&nbsp;&nbsp;
+  <span class = 'rating_period' > Rating Period:&nbsp; </span></td>&nbsp;&nbsp;
  <?php 
 
 $results = mysqli_query($connect,"SELECT * FROM schedule LIMIT 1");
@@ -277,9 +284,10 @@ $query = "SELECT * FROM `evaluation_data`
   
   
   
-<td>
+<td >
 <input type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
-<span style = "font-weight:bold;"> <?php echo $row['start']; ?> </span>
+
+<span class = "rating_period" style = "font-weight:bold;"> <?php echo $row['start']; ?> </span>
 </td>
 </td>
     <!--End-->
