@@ -95,7 +95,7 @@ Instrument for instruction/Teaching Effectiveness</h2>
 	
 	
 ?>
-  <a href = '../logout.php?user_type=student' style = 'color:red;text-decoration:none; '> Logout </a>
+  <a class="link"  href = '../logout.php?user_type=student' style = 'text-decoration:none; '> Logout </a>
   <table style="border:none;"> 
   <tr>
 <td>
@@ -181,12 +181,18 @@ Academic Rank:
 <input name="#" type="text" ></input>
 
 
-</td></tr>   
-</table> 
+</td>  
+</tr> 
 <br>
-<center> Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; ?></i>
+<tr> 
+<td> 
+<br>
+Evaluators: <b><i> <?php echo $student_data->FName . " ". $student_data->LName; ?></i>
 <input type = "hidden" name = "studentID" value =  "<?php echo $student_data->studentID;?>" >
-</b> </center><br>
+</b>
+</td></tr> 
+
+</table>  <br>
 
 <div class="cs">
 <input  class="checkbox" type="radio" name="evaluators" value="Self" disabled >Self&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -205,14 +211,14 @@ Academic Rank:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;
+
 
 <input  class="checkbox" name="evaluators" type="radio" name="evaluators"  disabled value="Supervisor" >Supervisor</input><br><br>
 </div>
 <center style = 'color:#b07219;text-decoration:none; '>
 <b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
 
-<table border="1" class="" width="100%">
+<table border="1" class="" width="60%">
 <tr>
   <td>Scale</td>
   <td>Descriptive Rating</td>
@@ -246,7 +252,7 @@ Academic Rank:
   <td>The faculty fails to meet job requirements</td>
   </tr>
   </table>
-
+<br>
 <table  border="1" class="tablesize">
 
 
@@ -480,7 +486,7 @@ Academic Rank:
 </tr>
 
 </table><BR><BR>
-<table border="1" class="tablesize">
+<table border="none" class="tablesize">
 <tr>
 <td>
 <?php
