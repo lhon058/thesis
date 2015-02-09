@@ -25,7 +25,7 @@ if (isset($_POST['submit'])){
 	
 
 	
-	if (!$result) 
+	if (!$result || $result->num_rows == 0) 
 	{
 
 		$query = "SELECT * FROM `faclogin` WHERE `username` = '".trim($username) ."' AND `password` = '". trim($password)."'";
