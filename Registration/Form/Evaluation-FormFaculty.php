@@ -138,7 +138,7 @@
 
 				if($result->num_rows > 0 )
 				{
-					echo "You have already evaluated ";
+				//	echo "You have already evaluated ";
 					//die();
 				}
 			 }
