@@ -129,10 +129,11 @@ $query = "SELECT * FROM `evaluation_data`
 
 
 
- $f_query = "SELECT DISTINCT `i`.`instructorID`,`i`.* FROM `instructor` as i
-             JOIN `evaluation_data` as ed
-             ON `i`.`instructorID` = `ed`.`instructorID`
-             WHERE `ed`.`user_id` != $student_data->studentID
+ $f_query = "SELECT * FROM `instructor` WHERE 
+ 		    `instructorID` NOT IN 
+ 		    (SELECT DISTINCT `instructorID` FROM `evaluation_data`
+ 		     WHERE `user_id` = $student_data->studentID AND `evaluators_type` = 'Student'
+ 		     AND `scheduleID` = ". $row['scheduleID'] .")
  		    ";
 
 
