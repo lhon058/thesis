@@ -49,7 +49,7 @@ else
 			<div class="student_center">
 			  
 			  <div class="copyright">
-			    Copyright © 2013 
+			    Copyright © 2015 
 			    Sorsogon State College-Bulan Campus, All Rights Reserved .
 			</div>
 

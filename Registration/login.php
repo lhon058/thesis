@@ -52,7 +52,7 @@ if (isset($_POST['submit'])){
 			{
 				$_SESSION['user_type'] = "admin";
 				$_SESSION['user_id'] = $data[0]['admin_id'];
-
+				
 
 
 				header("location:Admin-Page/index.php");

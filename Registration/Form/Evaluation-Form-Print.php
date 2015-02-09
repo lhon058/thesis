@@ -321,10 +321,7 @@ $query = "SELECT * FROM `evaluation_data`
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <span> Evaluator: <b> <?php echo $_GET['evaluator_type'];$evaluator_type = trim($_GET['evaluator_type']); ?>
-</div> 
-<center><br><br>
-<b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
-
+</div>
 <table border="1" class="" width="60%">
 <tr>
   <td>Scale</td>
@@ -369,7 +366,7 @@ $query = "SELECT * FROM `evaluation_data`
 <tr>
 
 <td class="left">A.Commitment</td>
-<td colspan="5" align="center"> Scale </td>
+<td colspan="5" align="center"> Rating </td>
 
 </tr>
 <tr>
@@ -411,11 +408,11 @@ $query = "SELECT * FROM `evaluation_data`
 <table border="1" class="tablesize">
 <tr>
 <td class="left">B. Knowledge of Subject</td>
-<td colspan="5" align="center"> Scale </td>
+<td colspan="5" align="center"> Rating </td>
 </tr>
 <tr>
 <td class="left">1. Demonstrates mastery of the subject matter (explain the subject matter without relying solely on the prescribed textbook).</td>
-<td class="tdsize">
+<td class="tdsize" >
 <?php echo $eval_data->b1; ?>
 </tr><tr>
 <td class="left">2. Draws and share information on the state of the art of theory and practice in his/her discipline.</td>
@@ -444,7 +441,7 @@ $query = "SELECT * FROM `evaluation_data`
 <table border="1" class="tablesize">
 <tr>
 <td class="left">C. Teaching for Independent Learning</td>
-<td colspan="5" align="center"> Scale </td>
+<td colspan="5" align="center"> Rating </td>
 </tr>
 <tr>
 <td class="left">1. Creates teaching strategies that allow students to practice using concepts they need to understand (interactive discussion).</td>
@@ -481,7 +478,7 @@ $query = "SELECT * FROM `evaluation_data`
 <table border="1" class="tablesize">
 <tr>
 <td class="left">D. Management of Learning</td>
-<td colspan="5" align="center"> Scale </td>
+<td colspan="5" align="center"> Rating </td>
 </tr>
 <tr>
 <td class="left">1. Creates opportunities for intensive and/or extensive contribution of students in the class activities(e.g. breaks class into dyads ,triads , or buzz/task groups).</td>
