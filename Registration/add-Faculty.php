@@ -60,7 +60,7 @@ if (isset($_POST['submit'])){
 
 					$addmember = mysqli_query($connect,$insert) or die(mysqli_error($connect));
 					
-					Header("Location:?redir=faculty_login"); 
+					Header("Location:index.php?redir=faculty_login"); 
 				}
 				else
 				{
