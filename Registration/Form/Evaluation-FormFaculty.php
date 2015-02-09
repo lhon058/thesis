@@ -234,7 +234,7 @@
 			<center>
 			<b>Instructions:</b> Please evaluate using the scale below.Click the radio button for your rating.</center><br>
 
-			<table border="1" class="" width="100%">
+			<table border="1" class="" width="60%">
 			<tr>
 			  <td>Scale</td>
 			  <td>Descriptive Rating</td>
@@ -510,7 +510,9 @@
 			$date=date("Y-m-d");
 
 			?>
-			Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			Name of evaluator&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;
 			<input name="noe"  style=" width:18%" type="text" value="<?php  echo $user_data->FName . " ".$user_data->LName ;  ?>" ></input><br>
 			</td>
 			</tr>
@@ -524,6 +526,7 @@
 			<td>
 			Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;
 			:
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -543,7 +546,7 @@
 		</fieldset>
 
 		<fieldset class="mac" >
-		  <a  name="print" href="home.php" style="cursor:pointer;"><img style="margin-left:600px;margin-top:5px" src="images/back.png" title="Back" width="70px"></img></a>
+		  <a  name="print" href="../Faculty-Page/Faculty-Page.php" style="cursor:pointer;"><img style="margin-left:600px;margin-top:5px" src="images/back.png" title="Back" width="70px"></img></a>
 
 
 		</fieldset>

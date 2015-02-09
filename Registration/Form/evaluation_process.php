@@ -64,7 +64,7 @@ if(isset($_POST))
 	$result = $connect->query($query) or die($connect->error);
 	
 	if($result)
-		echo "Done";
+		header("location:Form/Evaluation-Form.php");
 	else
 		echo "Error";
 	
