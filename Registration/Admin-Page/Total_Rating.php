@@ -21,7 +21,7 @@
 
 
 </script>
-<style>
+
     <style>
 .hide_for_print
 {
@@ -82,7 +82,9 @@ img {
 
 </style>
 
-</style>
+
+
+
 </head>
 	<body class="body">
 		<header class="mainheader">
@@ -107,7 +109,12 @@ img {
 								// connect to the database
                         include('connect.php');
 
-  							   if ($result = $connect->query("SELECT * FROM total_rating ORDER BY ratingID"))
+  							   if ($result = $connect->query("
+                                SELECT * FROM total_rating 
+                                JOIN `instructor` ON
+                                `total_rating`.`instructorID` = 
+                                `instructor`.`instructorID`                          
+                               "))
                         {
                                 // display records if there are records to display
                                 if ($result->num_rows > 0)
@@ -131,12 +138,36 @@ img {
                                         {
                                                 // set up a row for each record
                                                 echo "<tr>";
-                                                echo "<td>" . $row->instructorID . "</td>";
+                                                echo "<td>" . $row->FName ." ". $row->LName . "</td>";
                                                 echo "<td>" . $row->averageRatingStudent . "</td>";
                                                 echo "<td>" . $row->averageRatingSelf . "</td>";
                                                 echo "<td>" . $row->averageRatingPeer . "</td>";
                                                 echo "<td>" . $row->averageRatingSupervisor. "</td>";
-                                                echo "<td>" . $row->finalrating . "</td>";
+
+                                                if(empty($row->averageRatingStudent) || 
+                                                   empty($row->averageRatingSelf) ||
+                                                   empty($row->averageRatingPeer) ||
+                                                   empty($row->averageRatingSupervisor) )
+                                                {
+                                                    echo "<td>Cannot be determined yet</td>";
+                                                }
+                                                else
+                                                {
+                                                       echo "<td>" . 
+
+                                                        (
+                                                            ($row->averageRatingStudent * 0.3)+
+                                                            ($row->averageRatingSelf * 0.2) +
+                                                            ($row->averageRatingPeer * 0.2) +
+                                                            ($row->averageRatingSupervisor * 0.3)   
+
+                                                         
+                                                        )
+
+                                                              ."</td>";
+                                                }
+
+                                             
                                                 echo "</tr>";
                                         }
                                         

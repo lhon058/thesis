@@ -30,6 +30,7 @@
 	display: none;
 }
 @media print {
+
 *{
 	background: transparent;
 	color: black !important;
@@ -176,17 +177,22 @@ table { page-break-inside : avoid }
 
 			$total_eval = "";
 
-
+			$cond = 'instructorID';
 			if(trim($_GET['evaluator_type']) == 'All')
 			{
 				$evaluator_type = $average_data[$dcount];
+			}
+			else if(trim($_GET['evaluator_type']) == "Peer")
+			{
+				$evaluator_type = $_GET['evaluator_type'];
+				$cond = "user_id";
 			}
 			else
 				$evaluator_type = $_GET['evaluator_type'];
 			
 
 			$query = "SELECT * FROM `evaluation_data` 
-			          WHERE `instructorID` = '$instructor_id'
+			          WHERE `$cond` = '$instructor_id'
 					  AND `evaluators_type` = '$evaluator_type'
 					  AND `scheduleID` = $schedule->scheduleID";
 
@@ -194,6 +200,8 @@ table { page-break-inside : avoid }
 			
 					  
 			$result = $connect->query($query) or die($connect->error);
+
+			
 
 			$data = "";
 			if($result)
@@ -548,6 +556,7 @@ function analyze_result($result = array())
 	return $f_result;
 }
 	
+
 ?>
 
 
@@ -561,14 +570,20 @@ function analyze_result($result = array())
 					   student,supervisor,peer,self-->
 </h5>
 </header><br>
-<fieldset class="content print_home" style="width:90%; >
+<fieldset class="content print_home" style="width:100%;" >
 <div class = 'hide_for_print'>
 	
 	<span> Evaluator Type  : <?php echo $_GET['evaluator_type']; ?></span><br>
 	<span> Instructor Name  : <?php echo $instructor_data->FullName; ?></span>
 
 </div>
+<?php
+	if(empty($final_resultA))
+	{
+		die("No data to display <a href = '../Admin-Page/ict-instructorslist.php'> Back </a>");
+	}
 
+?>	
 <table class="bordered ">
 		<thead> 
 				<h5 >I. COMMITMENT <a href = '#' class ='print_b no_print' style = 'float:right;' > Print </a></h5>
