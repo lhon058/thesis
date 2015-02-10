@@ -64,7 +64,7 @@ if(isset($_POST))
 	$result = $connect->query($query) or die($connect->error);
 	
 	if($result)
-		header("location:Form/Evaluation-Form.php");
+		header("location:logout_student.php");
 	else
 		echo "Error";
 	

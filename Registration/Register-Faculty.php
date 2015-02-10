@@ -84,7 +84,27 @@
 </tr>
 <tr>
     <td height="10">
-    <input required type="text" name="rank" id="arank" placeholder="Academic Rank"></td>
+    <?php
+      require_once("db_connect.php");
+      $query = "SELECT * FROM `academic_rank`";
+
+      $academicrank = (object)db_query($query);
+
+     
+
+      echo "<select class='sel' name = 'academic_rank' required>
+          <option value = ''> Select Rank </option>";
+
+      foreach ($academicrank as $rank) 
+      {
+        $rank = (object)$rank;
+        echo "<option value ='$rank->rankID' > $rank->rankname</option>";
+      }
+
+      echo "</select>";
+
+    ?>
+    <!--<input required type="text" name="rank" id="arank" placeholder="Academic Rank">--></td>
 </tr>
 <tr>
     <td height="10">

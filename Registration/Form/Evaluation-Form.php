@@ -147,13 +147,13 @@ $query = "SELECT * FROM `evaluation_data`
   
   
 
-<input type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
- <input name="start" type="text" value="<?php echo $row['start']; ?>"> </input> </td>
+<input readonly type = "hidden"  name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
+ <input readonly name="start" type="text" value="<?php echo $row['start']; ?>"> </input> </td>
 
    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    &nbsp;&nbsp;TO:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    &nbsp;
-   <input name="end" type="text" value="<?php echo $row['end']; ?>"></input> </td>
+   <input readonly name="end" type="text" value="<?php echo $row['end']; ?>"></input> </td>
   
   </tr>
 
@@ -179,13 +179,6 @@ $query = "SELECT * FROM `evaluation_data`
 
 		<!--<input type = "hidden" name = "instructorID" value = "<?php echo $faculty_data->instructorID;?>">;-->
 	   </td>
-
-<td>
-Academic Rank:
-<input name="#" type="text" ></input>
-
-
-</td>  
 </tr> 
 <br>
 <tr> 
@@ -499,13 +492,13 @@ $date=date("Y-m-d");
 
 ?>
 Name of evaluator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input name="noe"  style=" width:18%" type="text" value="<?php  echo $student_data->FName . " ". $student_data->LName ;  ?>" ></input><br>
+<input name="noe"  readonly style=" width:18%" type="text" value="<?php  echo $student_data->FName . " ". $student_data->LName ;  ?>" ></input><br>
 </td>
 </tr>
 <tr>
 <td>
 Position of Evaluator&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input name="poe" style=" width:18%"   type="text" value="<?php  echo $student_data->type; ?>" ></input><br>
+<input name="poe" readonly style=" width:18%"   type="text" value="<?php  echo $student_data->type; ?>" ></input><br>
 </td>
 </tr>
 <tr>
@@ -516,7 +509,7 @@ Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;
 :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
+<input readonly style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
 
 </td>
 </tr>

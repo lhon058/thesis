@@ -5,6 +5,84 @@
 	<link rel="stylesheet" href="style.css" type="text/css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Admin</title>
+    <script src = "../javascript/jquery-2.1.1.min.js" ></script>
+    <script src = "../javascript/jquery.print.js"></script>
+
+    <script>
+
+    $(document).on("click",".print_b",function(e)
+    {   
+    
+        var parent = $(".print_home");
+
+        parent.print();
+
+    });
+
+
+</script>
+<style>
+    <style>
+.hide_for_print
+{
+    display: none;
+}
+@media print {
+*{
+    background: transparent;
+    color: black !important;
+    text-shadow: none !important;
+    filter:none !important;
+    -ms-filter: none !important;
+}
+.hide_for_print
+{
+    display: block !important;
+}
+a, a:visited {
+    text-decoration: underline;
+}
+
+a[href]:after {
+    content: " " !important;
+}
+abbr[title]:after {
+    content: " (" attr(title) ")";
+}
+ .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+}
+thead {
+    display: table-header-group;
+}
+tr, img {
+    page-break-inside: avoid;
+}
+img {
+    max-width: 100% !important;
+}
+ @page 
+ {
+   margin:1.5cm;
+   size:8.5in 11in;
+   orphans:4; 
+   widows:2;
+
+ } 
+
+.no_print
+{
+    display: none !important;
+}
+
+
+</style>
+
+</style>
 </head>
 	<body class="body">
 		<header class="mainheader">
@@ -19,14 +97,17 @@
 		</header>
 <div class="maincontent">
 	<div class="content">
-		<div class="pagecontent">
-			<h1>Schedule of Evaluation</h1>
-								<form>
-								<?php 
+		<div class="pagecontent" >
+        <fieldset class="content print_home" style="width:90%; border:none;" ">
+        <form >
+        <a href = '#' class ='print_b no_print' style = 'float:right;' > Print </a>
+			<h1 style='text-align:center;'>Rating</h1>
+				
+							<?php 
 								// connect to the database
                         include('connect.php');
 
-  							   if ($result = $connect->query("SELECT * FROM schedule ORDER BY scheduleID"))
+  							   if ($result = $connect->query("SELECT * FROM total_rating ORDER BY ratingID"))
                         {
                                 // display records if there are records to display
                                 if ($result->num_rows > 0)
@@ -38,10 +119,11 @@
                                         echo "<thead>
                                                 <tr>
                                                 <th>Name of Instructor</th>
-                                                <th>Start</th>
-                                                <th>End</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th>Students</th>
+                                                <th>Self</th>
+                                                <th>Peer</th>
+                                                <th>Supervisor</th>
+                                                <th>Final Rating</th>
                                                 </tr>
                                             <thead>";
                                         
@@ -49,11 +131,12 @@
                                         {
                                                 // set up a row for each record
                                                 echo "<tr>";
-                                                echo "<td>" . $row->instructor . "</td>";
-                                                echo "<td>" . $row->start . "</td>";
-                                                echo "<td>" . $row->end . "</td>";
-                                                echo "<td><a href='records.php?id=" . $row->scheduleID . "'>Edit</a></td>";
-                                                echo "<td><a href='delete.php?id=" . $row->scheduleID . "'>Delete</a></td>";
+                                                echo "<td>" . $row->instructorID . "</td>";
+                                                echo "<td>" . $row->averageRatingStudent . "</td>";
+                                                echo "<td>" . $row->averageRatingSelf . "</td>";
+                                                echo "<td>" . $row->averageRatingPeer . "</td>";
+                                                echo "<td>" . $row->averageRatingSupervisor. "</td>";
+                                                echo "<td>" . $row->finalrating . "</td>";
                                                 echo "</tr>";
                                         }
                                         
@@ -74,8 +157,8 @@
                         $connect->close();
 
                     		?>
-                    		<a href="records.php">Add New Record</a>
-  								 	</form>
+  					</form>
+                                    </fieldset>
 		</div>
 	</div>
 

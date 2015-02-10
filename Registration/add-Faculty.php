@@ -41,7 +41,7 @@ if (isset($_POST['submit'])){
 
 				$insert_instructor = "INSERT INTO `instructor` (`FName`,`MName`,`LName`,`age`,`FullName`,`academic_rank`)
 									  VALUES ('$_POST->FName','$_POST->MInit','$_POST->LName',$_POST->age,
-									  		  '$_POST->FName $_POST->MInit $_POST->LName','$_POST->rank')";
+									  		  '$_POST->FName $_POST->MInit $_POST->LName','$_POST->academic_rank')";
 
 				
 				if( mysqli_query($connect,$insert_instructor) or die(mysqli_error($connect)))

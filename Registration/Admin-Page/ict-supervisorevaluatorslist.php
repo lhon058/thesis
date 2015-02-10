@@ -32,6 +32,7 @@
 <li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
 <li><a href="instructors-list.php">List Of Instructors</a></li>
 <li><a href="results-list.php">List Of Results</a></li>
+<li><a href="Total_Rating.php">Total Rating</a></li>
 </ul>
 </nav>
 </aside>

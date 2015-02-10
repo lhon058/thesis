@@ -561,7 +561,7 @@ function analyze_result($result = array())
 					   student,supervisor,peer,self-->
 </h5>
 </header><br>
-<fieldset class="content print_home" style="width:100%;" >
+<fieldset class="content print_home" style="width:90%; >
 <div class = 'hide_for_print'>
 	
 	<span> Evaluator Type  : <?php echo $_GET['evaluator_type']; ?></span><br>

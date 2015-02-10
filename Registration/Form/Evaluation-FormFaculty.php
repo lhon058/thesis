@@ -150,14 +150,14 @@
 			  
 			  
 			<td>
-			<input type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
-			<input name="start" type="text" value="<?php echo $row['start']; ?>"> </input>
+			<input readonly type = "hidden" name = "schedule_id" value = "<?php echo $row['scheduleID'];?>" />
+			<input readonly name="start" type="text" value="<?php echo $row['start']; ?>"> </input>
 			</td>
 			</td>
 			    <!--End-->
 			&nbsp;&nbsp;<td>
 			  to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			  <input name="end" type="text" value="<?php echo $row['end']; ?>"></input></td>
+			  <input readonly name="end" type="text" value="<?php echo $row['end']; ?>"></input></td>
 			<br><br><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -196,14 +196,11 @@
 			?>
 			  
 			&nbsp;&nbsp;
-			<tr>Academic Rank:</tr>
-			<tr><td><input name="#" type="text" ></input></td></tr>
 			<br><br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;
 
 
 			<span> Evaluators: <b><i> <?php echo $user_data->FName . " ". $user_data->LName; ?></i>
@@ -227,7 +224,6 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;
 
 			<input  class="checkbox" name="evaluators" type="radio" name="evaluators" value="Supervisor" >Supervisor</input><br><br>
 			</div>
@@ -513,13 +509,13 @@
 			Name of evaluator&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input name="noe"  style=" width:18%" type="text" value="<?php  echo $user_data->FName . " ".$user_data->LName ;  ?>" ></input><br>
+			<input readonly name="noe"  style=" width:18%" type="text" value="<?php  echo $user_data->FName . " ".$user_data->LName ;  ?>" ></input><br>
 			</td>
 			</tr>
 			<tr>
 			<td>
 			Position of Evaluator&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input name="poe" style=" width:18%"   type="text" value="<?php  echo $user_data->type; ?>" ></input><br>
+			<input readonly name="poe" style=" width:18%"   type="text" value="<?php  echo $user_data->type; ?>" ></input><br>
 			</td>
 			</tr>
 			<tr>
@@ -530,7 +526,7 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;
 			:
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<input style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
+			<input readonly style=" width:18%" type="text" value="<?php  echo date("m-d-Y"); ?>" ></input>
 
 			</td>
 			</tr>
