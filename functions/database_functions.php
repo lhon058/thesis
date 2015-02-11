@@ -21,7 +21,9 @@ if(isset($connect) && !empty($connect) || isset($GLOBALS['db']))
 		$result = mysqli_query($connect,$query) or die(mysqli_error($connect));
 
 		$count = @mysqli_num_rows($result);
-		if(!$count) return;
+		
+		if(!$count) return false;
+		
 		if($result)
 		{
 			while($row = mysqli_fetch_assoc($result))

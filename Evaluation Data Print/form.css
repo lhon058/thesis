@@ -1,0 +1,103 @@
+body{
+background:steelblue;
+font-family: Montserrat, sans-serif;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+
+
+}
+.content {
+background-color:#34495E;
+
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+
+}
+fieldset{
+border-radius:10px;
+
+}
+
+table{
+font-family: Montserrat, sans-serif;
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;font-size:13px;
+color: #fff;
+  font-weight: bold;
+
+border-width: 1px;
+border-collapse: collapse;
+
+}
+
+table {
+border-width: 1px;
+padding: 8px;
+border-style: solid;
+border-color: #666666;
+margin-top:5px;
+margin-left: auto;
+margin-right: auto;
+
+margin-bottom:5px;
+
+}
+.thead{
+	font-family: Montserrat, sans-serif;
+	color:#dd5;
+}
+.tablesize
+
+{
+
+width:1000px;
+}
+
+.tdsize{
+
+width:200px;
+
+}
+fieldset{
+
+margin-left: auto;
+margin-right: auto;
+
+}
+h2{
+
+font-style:Andale Mono;
+
+
+}
+div {vertical-align: middle; margin-left: 300px;
+}
+
+.text{
+padding: 5px;   
+border: 1px solid #DDDDDD;
+
+/*Applying CSS3 gradient*/
+background: -moz-linear-gradient(center top , #FFFFFF,  #EEEEEE 1px, #FFFFFF 20px);    
+background: -webkit-gradient(linear, left top, left 20, from(#FFFFFF), color-stop(5%, #EEEEEE) to(#FFFFFF));
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FBFBFB', endColorstr='#FFFFFF');
+
+/*Applying CSS 3radius*/   
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+
+/*Applying CSS3 box shadow*/
+-moz-box-shadow: 0 0 2px #DDDDDD;
+-webkit-box-shadow: 0 0 2px #DDDDDD;
+box-shadow: 0 0 2px #DDDDDD;
+
+}
+input[type="text"]:hover
+{
+border:1px solid #cccccc;
+}
+input[type="text"]:focus
+{
+box-shadow:0 0 2px #FFFE00;
+}

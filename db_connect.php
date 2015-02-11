@@ -1,8 +1,10 @@
 <?php
 	$server = 'localhost';
-	$username = 'Mine';
-	$password = 'theone';
+	$username = 'root';
+	$password = '';
 	$db = 'evaluation_db';
+	session_start();
+	include_once("Session.php");
 
 
 	// connect to the database
@@ -14,7 +16,8 @@
 
 		if(mysqli_connect_error())
 		{
-			$connect = mysqli_connect($server,"Mine","theone","evaluation");
+			$connect = mysqli_connect($server,"Mine","theone","evaluation_db");
+			
 			if(mysqli_connect_error())
 			{
 				echo "There is an error ";
