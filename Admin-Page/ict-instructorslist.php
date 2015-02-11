@@ -13,7 +13,7 @@
 				<ul>
 				<li class="active"><a href="index.php">Home</a></li>
 				<li><a href="">About Us</a></li>
-				<li><a href="">Logout</a></li>
+				<li><a href="../logout.php?user_type=admin">Logout</a></li>
 				</ul>
 			</nav>			
 		</header>
@@ -21,13 +21,59 @@
 	<div class="content">
 		<div class="pagecontent">
 			<p>ICT Instructor</p>
-			<select>
-				<option >Instructor 1</option>
-				<option><a href="ict-selfevaluatorlist.php">Self</a></option>
-				<option><a href="ict-evaluatorslist.php">Student</a></option>
-				<option><a href="ict-peersevaluatorslist.php">Peers</a></option>
-				<option><a href="ict-supervisorevaluatorslist.php">Supervisor</a></option>
-			</select>
+			
+			<?php include_once("../db_connect.php");
+			
+			$query = "SELECT * FROM `instructor`";
+			
+			$result = $connect->query($query);
+			
+			if($result)
+			{
+			
+				while($row = $result->fetch_assoc())
+				{
+					$instructors[] = $row;
+				}
+				
+				
+			}
+			
+				
+			
+			?>
+
+
+			<form method = "GET" action = "../Form/Sectoral-Form.php"> 
+				<select name = "instructor">
+				
+				
+					<?php
+						if(isset($instructors) && !empty($instructors))
+						{					
+							foreach($instructors as $i)
+							{
+								$i = (object)$i;
+								echo "<option value = '$i->instructorID'> $i->FName $i->LName </option>";
+							}
+						}
+						
+						
+					?>
+				</select>
+				
+				<select name = "evaluator_type" >
+		
+					<option><a href="ict-selfevaluatorlist.php">All</a></option>
+					<option><a href="ict-selfevaluatorlist.php">Self</a></option>
+					<option><a href="ict-evaluatorslist.php">Student</a></option>
+					<option><a href="ict-peersevaluatorslist.php">Peer</a></option>
+					<option><a href="ict-supervisorevaluatorslist.php">Supervisor</a></option>
+					
+				</select>
+				<input type = "submit" name = "view_result" value = "View" >
+				
+			</form>
 		</div>
 	</div>
 
@@ -35,10 +81,11 @@
 <aside >
 <nav>
 <ul>
-<li><a href="registration-request.php">Registration Request</a></li>
 <li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
 <li><a href="instructors-list.php">List Of Instructors</a></li>
 <li><a href="results-list.php">List Of Results</a></li>
+<li><a href="Total_Rating.php">Total Rating</a></li>
+<li><a href="kmeans.php">Performance Grouping</a></li>
 </ul>
 </nav>
 </aside>

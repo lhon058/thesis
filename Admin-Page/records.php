@@ -69,10 +69,11 @@
 <aside >
 	<nav>
 	<ul>
-	<li><a href="registration-request.php">Registration Request</a></li>
 	<li><a href="evaluation-schedule.php">Schedule of Evaluation</a></li>
 	<li><a href="instructors-list.php">List Of Instructors</a></li>
 	<li><a href="results-list.php">List Of Results</a></li>
+	<li><a href="Total_Rating.php">Total Rating</a></li>
+	<li><a href="kmeans.php">Performance Grouping</a></li>
 	</ul>
 	</nav>
 </aside>
@@ -149,7 +150,7 @@
 				$id = $_GET['id'];
 				
 				// get the recod from the database
-				if($stmt = $connect->prepare("SELECT * FROM schedule WHERE id=?"))
+				if($stmt = $connect->prepare("SELECT * FROM schedule WHERE scheduleID=?"))
 				{
 					$stmt->bind_param("i", $id);
 					$stmt->execute();

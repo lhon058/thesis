@@ -1,0 +1,199 @@
+body{
+	/*background-image: ;*/
+	color: #000305;
+	font-size: 87.5%;
+	font-family: Arial,'Lucida Sans Unicode';
+	line-height: 1.5;
+	text-align: left;
+}
+a{
+	text-decoration: none;
+}
+a:link,a:visited{
+
+}
+a:hover,a:active{
+
+}
+.body{
+margin:0 auto;
+width: 70%;
+clear: both;
+}
+.mainheader nav{
+	margin:1px 0;
+	background-color:#D0D0D0 ;
+	height: 40px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.mainheader img{
+margin:2% auto;
+width: 100%;
+clear: both;
+}
+.mainheader nav ul{
+	list-style: none;
+	margin:0 auto;
+}
+.mainheader nav ul li{
+	float: left;
+	display: inline;
+}
+.mainheader nav a:link,.mainheader nav a:visited{
+	color: #000000;
+	display: inline-block;
+	padding: 10px 25px;
+	height: 20px;
+}
+.mainheader nav a:hover,.mainheader nav a:active,
+.mainheader nav .active a:link,.mainheader nav .active a:visited{
+	background-color: #0a8d84;
+	text-shadow:none;
+}
+.mainheader nav ul li a{
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.maincontent{
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+.content{
+	width: 74%;
+	height: 100%;
+	float: right;
+}
+.pagecontent{
+	background:#E0E0E0;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	padding: 3% 5%; 
+	margin-top: 2%;
+}
+aside nav ul{
+list-style: none;
+}
+aside nav ul li a{
+	background-color: white;
+    color: black;
+    text-decoration: none;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+aside nav a:hover,nav a:active,
+nav .active a:link,nav .active a:visited{
+margin:0 auto;
+background-color: #0a8d84;
+text-shadow:none;
+}
+aside nav a:link,nav a:visited{
+	color: #000000;
+	display: inline-block;
+	padding: 10px 25px;
+	height: 20px;
+}
+.bgfooter{
+margin:2% auto;
+width: 100%;
+clear: both;
+}
+ul#menu {
+    padding: 0;
+}
+
+ul#menu li {
+    display: inline;
+}
+
+ul#menu li a {
+    background-color: white;
+    color: black;
+    padding: 15px 50px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul#menu li a:hover {
+    background-color: #0a8d84;
+}
+.bordered {
+	margin: 40px auto;
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered tr {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}

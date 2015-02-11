@@ -1,48 +1,144 @@
+<!DOCTYPE html>
+
 <?php
 
-	include_once("db_connect.php");
+// reset function for student and faculty login
 
+include_once("db_connect.php");
 
-	$results = db_query("SELECT * FROM `signup`");
+$query = "UPDATE `faclogin` SET `status` = 0 WHERE `status` = 1";
 
-	if($results)
-	{	
-		echo "<table border = '1'>";
-		foreach ($results as $result) 
-		{
-			//convert nato sa object para madali pagkuwa value
-			$result = (object)$result;
+$res = $connect->query($query);
 
-			echo "<tr> <td> $result->username </td>
-					   <td> $result->firstname </td>
-					   <td> $result->lastname </td>
-				  </tr>	";
-		}
-	}
-
-
-	// sample insert value
-	// an paginsert padi insusulod ko lang sa array
-	// an array
-	// 	sa left side an field name or column name
-	// 	sa right an value na gusto mo iinsert
-	// 	tapos gahuyon mo lang an db_insert("table_name ex. student", array() ex. $insert_values);
+if($res)
+{
+	$query_nxt = "UPDATE `signup` SET `logged_in` = 0 WHERE `logged_in` = 1";
+	$res = $connect->query($query);
 	
-
-
-	// comment ko muna ini intiro kay kapag inrerefresh ko tuda 
-	// lang insert kaipuhan pa pangvalidate qng may kapareho na
-	/*
-	$insert_values = array
-				    (
-				    	"FName" => "Marlon",
-				    	"MName"  => "E.",
-				    	"LName"  => "Decano",
-				    	"FullName" => "Marlon Decano",
-				    	"StudentNo" => "11-????"
-
-				    );
-	db_insert("student",$insert_values);
-	*/
+	if($res)
+		echo "";
+	else
+		die("Unexpected Error : Contact SysAdmin #123");
+}
+else
+{
+		die("Unexpected Error : Contact SysAdmin #123");
+}
 
 ?>
+
+
+<html lang ="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="login.css" type="text/css"/>
+		<link rel="stylesheet" href="registration.css" type="text/css"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Faculty Evaluation System</title>
+	</head>
+
+
+	<body>
+			<div class="indexpage">
+			 		<div class="header">
+			    <div class="navigation_bar"></div>
+			  		</div>
+			 <div class="body"></div>
+			<div class="gitna">
+			<div class="student_center">
+			  
+			  <div class="copyright">
+			    Copyright © 2015 
+			    Sorsogon State College-Bulan Campus, All Rights Reserved .
+			</div>
+
+
+
+			     <div class="registration"></div>
+			      <div class="menu">
+				
+						<ul id="MenuBar2" class="MenuBarVertical">
+						<li><a href="index.php">Home</a></li>
+						<li><a href="?redir=student_login">Student</a></li>
+						<li><a href="?redir=faculty_login">Faculty</a></li>
+						<li><a href="?redir=admin_login">Admin</a></li>
+						<li><a href="#">Developers</a></li>
+						<li><a href="#">Contacts</a></li>
+						</ul>
+			  
+			    
+			</div>
+			  
+			</div>
+			  </div>
+
+			</div>
+
+
+
+	<?php 
+
+
+		if(isset($_GET['redir']) && !empty($_GET['redir']))
+		{
+			switch ($_GET['redir']) 
+			{
+				case 'student_login':
+				{
+					include_once("Login-Students.php");
+					break;
+				}
+				case 'faculty_login':
+				{
+					include_once("Login-Faculty.php");
+					break;
+				}
+				case 'admin_login':
+				{
+					include_once("Login-Admin.php");
+					break;
+				}
+					
+					
+				
+				default:
+					include_once("Login-Students.php");
+					break;
+			}
+
+
+
+		}
+		else
+		{
+			include_once("Login-Students.php");
+		}
+
+
+	?>
+<!--
+			<div class="student_login">
+			<div class="login_content">
+			  <form id="form1" name="form1" method="post" action="login.php">
+			<div class="login">
+			  <p>
+			  <input class="text" type="text" name="username" id="username" placeholder="Username"/>
+			   <input class="text" type="password" name="password" id="Password" placeholder="Password" />
+			    </p>
+			  <p>
+			    <input  type="submit" name="submit" id="submit" value="Log In" />
+			    <input  type="reset" name="button2" id="button2" value="Clear Entries" />
+			  </p>
+			   <p>&nbsp;</p>
+			</div>
+			<span style ='color:white;'> <?php echo Session::flash("message");?></span>
+			</form></div>
+			</div>
+-->
+
+</body>
+
+
+</html>
+		
